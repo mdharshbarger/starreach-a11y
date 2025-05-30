@@ -107,3 +107,13 @@ body {
   background-color: #e3eaf0;
   padding: 4px;
 }
+#aresCarousel img {
+  object-fit: contain;
+  width: 100%;
+}
+
+#aresCarousel .carousel-item img[src*="ares-support-deck"],
+#aresCarousel .carousel-item img[src*="ares-life-support"],
+#aresCarousel .carousel-item img[src*="ares-hauler-config"] {
+  height: 500px;
+}
