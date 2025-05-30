@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StarReach Aerospace</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-  <link rel="stylesheet" href="main-styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Menu Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="main-styles.css"> 
 </head>
 <body>
-
-  <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
 
   <section class="hero-section">
     <img src="images/banner.jpg" alt="View of Earth from space with satellite in orbit" class="hero-image">
@@ -19,6 +18,56 @@
     </div>
   </section>
 
+  <section class="mission-highlights">
+    <h2>Mission Highlights</h2>
+    <p>From orbital satellites to Mars-bound cargo landers, StarReach Aerospace continues to redefine what's possible in aerospace technology.</p>
+    <div class="mission-list">
+      <div class="mission-item">
+        <a href="missions/hermes-net-mission.html">
+          <img src="images/leo-comms.jpg" alt="Hermes Net Communication Array">
+          <div class="mission-title">Hermes Net<br><span class="mission-subtitle">LEO Comms Array</span></div>
+        </a>
+      </div>
+      <div class="mission-item">
+        <a href="missions/ares-hauler.html">
+          <img src="images/mars-lander.jpg" alt="Ares Hauler Cargo Lander">
+          <div class="mission-title">Ares Hauler<br><span class="mission-subtitle">Mars Cargo Lander</span></div>
+        </a>
+      </div>
+      <div class="mission-item">
+        <a href="missions/odins-eye.html">
+          <img src="images/orbital-telescope.jpg" alt="Odin's Eye Telescope Platform">
+          <div class="mission-title">Odin's Eye<br><span class="mission-subtitle">Orbital Telescope Platform</span></div>
+        </a>
+      </div>
+      <div class="mission-item">
+        <a href="missions/selene-scout.html">
+          <img src="images/lunar-rover.jpg" alt="Selene Scout Lunar Deployment Rover">
+          <div class="mission-title">Selene Scout<br><span class="mission-subtitle">Lunar Deployment Rover</span></div>
+        </a>
+      </div>
+      <div class="mission-item">
+        <a href="missions/thor-moon.html">
+          <img src="images/thor-moon.jpg" alt="Thor Moon Mission Lander">
+          <div class="mission-title">Thor Moon Mission<br><span class="mission-subtitle">Deep Space Lunar Descent</span></div>
+        </a>
+      </div>
+      <div class="mission-item">
+        <a href="missions/chiron-probe.html">
+          <img src="images/asteroid-surveyor.jpg" alt="Chiron Probe for Asteroid Survey">
+          <div class="mission-title">Chiron Probe<br><span class="mission-subtitle">Asteroid Surveyor</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="crew-section">
+    <h2>Meet the Crew</h2>
+    <img src="images/crew.jpg" alt="The StarReach Aerospace team standing proudly together on a launch pad">
+    <p>At StarReach Aerospace, our team includes expert engineers, test pilots, mission analysts, and explorers driven by one goal: pushing humanity further into the stars. We believe exploration is our greatest purpose and our boldest opportunity.</p>
+  </section>
+  
   <section class="contact-section" id="contact">
     <h2>Contact Mission Control</h2>
     <p>Need technical specs, partnership information, or just want to say hello? Reach out and a member of our ground team will be in touch shortly.</p>
@@ -41,37 +90,42 @@
 
   <div id="footer-placeholder"></div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      fetch("header.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("header-placeholder").innerHTML = data;
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Load header
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
 
-          const waitForMenu = setInterval(() => {
-            const menuItems = document.querySelectorAll('[role="menuitem"]');
-            if (menuItems.length > 0) {
-              clearInterval(waitForMenu);
-              menuItems.forEach((item, index) => {
-                item.addEventListener('keydown', (e) => {
-                  if (e.key === 'ArrowRight') {
-                    menuItems[(index + 1) % menuItems.length].focus();
-                  } else if (e.key === 'ArrowLeft') {
-                    menuItems[(index - 1 + menuItems.length) % menuItems.length].focus();
-                  }
-                });
+        // Optional: Enable keyboard navigation for menu after it's inserted
+        const waitForMenu = setInterval(() => {
+          const menuItems = document.querySelectorAll('[role="menuitem"]');
+          if (menuItems.length > 0) {
+            clearInterval(waitForMenu);
+            menuItems.forEach((item, index) => {
+              item.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                  menuItems[(index + 1) % menuItems.length].focus();
+                } else if (e.key === 'ArrowLeft') {
+                  menuItems[(index - 1 + menuItems.length) % menuItems.length].focus();
+                }
               });
-            }
-          }, 50);
-        });
+            });
+          }
+        }, 50);
+      });
 
-      fetch("footer.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-        });
-    });
-  </script>
+    // Load footer
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  });
+</script>
 
 </body>
 </html>
+
+
