@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mars Exploration - Bootstrap 5 Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .mars-bg {
+      background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21723-16.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      color: white;
+    }
+    .hero-text {
+      background-color: rgba(0,0,0,0.5);
+      padding: 2rem;
+    }
+    .carousel-item img {
+      max-height: 400px;
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header class="mars-bg d-flex align-items-center">
+    <div class="container hero-text">
+      <h1>Mission: Mars Odyssey</h1>
+      <p>Journey to the Red Planet — where danger meets discovery.</p>
+    </div>
+  </header>
+
+  <main class="container mt-5">
+    <!-- Intentional Error: No label for input -->
+    <form class="mb-5">
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Enter your name">
+      </div>
+      <button class="btn btn-danger" type="submit">Launch</button>
+    </form>
+
+    <!-- Carousel -->
+    <div id="marsCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://mars.nasa.gov/system/news_items/main_images/9284_PIA25681-FigureA-web.jpg" alt="Mars surface from Perseverance" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://mars.nasa.gov/system/news_items/main_images/9227_PIA24428-FigureA-web.jpg" alt="Mars Rover tracks on surface" class="d-block w-100">
+        </div>
+      </div>
+      <!-- Intentional Error: Missing accessible controls -->
+    </div>
+
+    <!-- Collapsible Section -->
+    <div class="accordion mb-5" id="marsFacts">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="factOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            Martian Atmosphere
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#marsFacts">
+          <div class="accordion-body">
+            Mars has a very thin atmosphere made mostly of carbon dioxide.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="factTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Water on Mars
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#marsFacts">
+          <div class="accordion-body">
+            Water exists in frozen form beneath the Martian surface.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Trigger -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#missionModal">
+      Read Mission Brief
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="missionModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Intentional Error: No heading in modal -->
+          <div class="modal-body">
+            <p>The crew of the Odyssey will face solar storms, unexpected terrain, and the unknown. Stay alert. Stay alive.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accessible Menu Example</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     nav[role="menubar"] {
       background-color: #000;
@@ -109,20 +110,35 @@
       min-width: 250px;
       max-width: 300px;
       text-align: center;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .mission-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
     }
     .mission-item a {
       text-decoration: none;
       color: white;
+      display: block;
+    }
+    .mission-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+    .mission-item a:hover .mission-title {
+      color: #ffcc00;
+      text-decoration: underline;
     }
     .mission-item img {
       width: 100%;
       height: auto;
       border-radius: 6px;
       margin-bottom: 0.75rem;
+      transition: transform 0.3s ease;
     }
-    .mission-title {
-      font-weight: bold;
-      font-size: 1.3rem;
+    .mission-item:hover img {
+      transform: scale(1.05);
     }
     .mission-subtitle {
       font-size: 0.95rem;
@@ -194,6 +210,15 @@
       font-size: 0.875rem;
       color: #666;
     }
+    footer .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    footer .social-icons a:hover {
+      color: #1da1f2;
+    }
   </style>
 </head>
 <body>
@@ -215,6 +240,7 @@
     </div>
   </header>
 
+
   <section class="hero-section">
     <img src="images/banner.jpg" alt="View of Earth from space with satellite in orbit" class="hero-image">
     <div class="hero-text">
@@ -226,38 +252,45 @@
     <h2>Mission Highlights</h2>
     <p>From orbital satellites to Mars-bound cargo landers, StarReach Aerospace continues to redefine what's possible in aerospace technology.</p>
     <div class="mission-list">
-     <div class="mission-item">
-        <img src="images/leo-comms.jpg" alt="Hermes Net Communication Array">
-        <div class="mission-title">Hermes Net</div>
-        <div class="mission-subtitle">LEO Comms Array</div>
+      <div class="mission-item">
+        <a href="missions/hermes-net.html">
+          <img src="images/leo-comms.jpg" alt="Hermes Net Communication Array">
+          <div class="mission-title">Hermes Net<br><span class="mission-subtitle">LEO Comms Array</span></div>
+        </a>
       </div>
       <div class="mission-item">
-        <img src="images/mars-lander.jpg" alt="Ares Hauler Cargo Lander">
-        <div class="mission-title">Ares Hauler</div>
-        <div class="mission-subtitle">Mars Cargo Lander</div>
+        <a href="missions/ares-hauler.html">
+          <img src="images/mars-lander.jpg" alt="Ares Hauler Cargo Lander">
+          <div class="mission-title">Ares Hauler<br><span class="mission-subtitle">Mars Cargo Lander</span></div>
+        </a>
       </div>
       <div class="mission-item">
-        <img src="images/orbital-telescope.jpg" alt="Odin's Eye Telescope Platform">
-        <div class="mission-title">Odin's Eye</div>
-        <div class="mission-subtitle">Orbital Telescope Platform</div>
+        <a href="missions/odins-eye.html">
+          <img src="images/orbital-telescope.jpg" alt="Odin's Eye Telescope Platform">
+          <div class="mission-title">Odin's Eye<br><span class="mission-subtitle">Orbital Telescope Platform</span></div>
+        </a>
       </div>
       <div class="mission-item">
-        <img src="images/lunar-rover.jpg" alt="Selene Scout Lunar Deployment Rover">
-        <div class="mission-title">Selene Scout</div>
-        <div class="mission-subtitle">Lunar Deployment Rover</div>
+        <a href="missions/selene-scout.html">
+          <img src="images/lunar-rover.jpg" alt="Selene Scout Lunar Deployment Rover">
+          <div class="mission-title">Selene Scout<br><span class="mission-subtitle">Lunar Deployment Rover</span></div>
+        </a>
       </div>
       <div class="mission-item">
-        <img src="images/thor-moon.jpg" alt="Thor Moon Mission Lander">
-        <div class="mission-title">Thor Moon Mission</div>
-        <div class="mission-subtitle">Deep Space Lunar Descent</div>
+        <a href="missions/thor-moon.html">
+          <img src="images/thor-moon.jpg" alt="Thor Moon Mission Lander">
+          <div class="mission-title">Thor Moon Mission<br><span class="mission-subtitle">Deep Space Lunar Descent</span></div>
+        </a>
       </div>
       <div class="mission-item">
-        <img src="images/asteroid-surveyor.jpg" alt="Chiron Probe for Asteroid Survey">
-        <div class="mission-title">Chiron Probe</div>
-        <div class="mission-subtitle">Asteroid Surveyor</div>
+        <a href="missions/chiron-probe.html">
+          <img src="images/asteroid-surveyor.jpg" alt="Chiron Probe for Asteroid Survey">
+          <div class="mission-title">Chiron Probe<br><span class="mission-subtitle">Asteroid Surveyor</span></div>
+        </a>
       </div>
     </div>
   </section>
+
 
   <section class="crew-section">
     <h2>Meet the Crew</h2>
@@ -305,6 +338,13 @@
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+      <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+    </div>
     <div class="address">
       StarReach Aerospace Headquarters<br>
       100 Launchpad Drive, Cape Orion, FL 32920, USA
@@ -316,4 +356,5 @@
 
 </body>
 </html>
+
 
