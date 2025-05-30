@@ -1,30 +1,16 @@
-  <header>
-    <div class="top-header">
-      <div class="container">
-        <a href="#" class="navbar-brand">
-          <img src="images/StarReach.png" alt="StarReach Aerospace Logo">
-          <span>StarReach Aerospace</span>
-        </a>
-        <nav role="menubar" class="d-flex">
-          <a role="menuitem" href="#home" tabindex="0">Home</a>
-          <a role="menuitem" href="#about" tabindex="0">About</a>
-          <a role="menuitem" href="#services" tabindex="0">Services</a>
-          <a role="menuitem" href="#contact" tabindex="0">Contact</a>
-        </nav>
-      </div>
+<header>
+  <div class="top-header">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="images/StarReach.png" alt="StarReach Aerospace Logo">
+        <span>StarReach Aerospace</span>
+      </a>
+      <nav role="menubar" class="d-flex">
+        <a role="menuitem" href="#home" tabindex="0">Home</a>
+        <a role="menuitem" href="#about" tabindex="0">About</a>
+        <a role="menuitem" href="#services" tabindex="0">Services</a>
+        <a role="menuitem" href="#contact" tabindex="0">Contact</a>
+      </nav>
     </div>
-  </header>
-
-   <script>
-    const menuItems = document.querySelectorAll('[role="menuitem"]');
-    menuItems.forEach((item, index) => {
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') {
-          menuItems[(index + 1) % menuItems.length].focus();
-        } else if (e.key === 'ArrowLeft') {
-          menuItems[(index - 1 + menuItems.length) % menuItems.length].focus();
-        }
-      });
-    });
-  </script>
-
+  </div>
+</header>

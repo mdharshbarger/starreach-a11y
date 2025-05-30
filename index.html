@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StarReach Aerospace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main-styles.css" />
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <section class="hero-section">
+    <img src="images/banner.jpg" alt="View of Earth from space with satellite in orbit" class="hero-image">
+    <div class="hero-text">
+      Welcome to StarReach Aerospace, where innovation meets the stars.
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2>Contact Mission Control</h2>
+    <p>Need technical specs, partnership information, or just want to say hello? Reach out and a member of our ground team will be in touch shortly.</p>
+    <form class="contact-form">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="5" placeholder="Your message..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+
+          const waitForMenu = setInterval(() => {
+            const menuItems = document.querySelectorAll('[role="menuitem"]');
+            if (menuItems.length > 0) {
+              clearInterval(waitForMenu);
+              menuItems.forEach((item, index) => {
+                item.addEventListener('keydown', (e) => {
+                  if (e.key === 'ArrowRight') {
+                    menuItems[(index + 1) % menuItems.length].focus();
+                  } else if (e.key === 'ArrowLeft') {
+                    menuItems[(index - 1 + menuItems.length) % menuItems.length].focus();
+                  }
+                });
+              });
+            }
+          }, 50);
+        });
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+
+</body>
+</html>
