@@ -8,12 +8,50 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="../main-styles.css" />
+  <style>
+    .service-feature {
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .service-feature img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .service-icon {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+    .trusted-section {
+      padding: 4rem 2rem;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+    .trusted-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .trusted-logos img {
+      width: 150px;
+      height: auto;
+      margin: auto;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    .trusted-logos img:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <div id="header-placeholder"></div>
 
   <section class="hero-section">
-    <img src="../images/services-banner.jpg" alt="Background of Earth from orbit" class="hero-image">
+    <img src="../images/milky-way-2695569_1280.jpg" alt="Background of Earth from orbit" class="hero-image">
     <div class="hero-text">
       <h1>Our Services</h1>
       <p class="lead">Engineering today for tomorrow’s missions</p>
@@ -25,35 +63,60 @@
       <h2 class="fw-bold">What We Offer</h2>
       <p class="text-muted">Delivering value through expertise while fueling our vision for deep space exploration.</p>
     </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card h-100 text-center p-4 shadow-sm rounded">
-          <i class="fa-solid fa-rocket service-icon mb-3"></i>
-          <h5>Launch Systems Consulting</h5>
-          <p>Plan, design, and optimize launch-ready systems from LEO to lunar orbit. Custom staging and payload solutions available.</p>
-        </div>
+
+    <div class="row align-items-center service-feature">
+      <div class="col-md-6">
+        <img src="../images/launch-systems.png" alt="Rocket on launch pad" />
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card h-100 text-center p-4 shadow-sm rounded">
-          <i class="fa-solid fa-satellite service-icon mb-3"></i>
-          <h5>Mission Architecture</h5>
-          <p>End-to-end spacecraft design and integration, using modular strategies derived from our Hermes and Ares programs.</p>
-        </div>
+      <div class="col-md-6">
+        <h3><i class="fa-solid fa-rocket service-icon"></i> Launch Systems Consulting</h3>
+        <p>Plan, design, and optimize launch-ready systems for any orbital target. From payload integration to stress management and vibration mitigation, our team ensures you’re cleared for takeoff.</p>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card h-100 text-center p-4 shadow-sm rounded">
-          <i class="fa-solid fa-wifi service-icon mb-3"></i>
-          <h5>Communication Infrastructure</h5>
-          <p>Secure and scalable data relay powered by Hermes Net. Ideal for Earth observation, disaster relief, and beyond.</p>
-        </div>
+    </div>
+
+    <div class="row align-items-center service-feature flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="../images/mission-architecture.png" alt="Spacecraft blueprint design" />
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="service-card h-100 text-center p-4 shadow-sm rounded">
-          <i class="fa-solid fa-flask service-icon mb-3"></i>
-          <h5>Applied R&D Partnerships</h5>
-          <p>Collaborate on cutting-edge technologies in deep-space imaging, AI-guided systems, and long-duration habitation support.</p>
-        </div>
+      <div class="col-md-6">
+        <h3><i class="fa-solid fa-satellite service-icon"></i> Mission Architecture</h3>
+        <p>From initial requirements to launch, we build modular systems inspired by our Hermes and Ares missions. StarReach’s architecture services empower clients with adaptable spacecraft systems ready for LEO, lunar, or interplanetary travel.</p>
       </div>
+    </div>
+
+    <div class="row align-items-center service-feature">
+      <div class="col-md-6">
+        <img src="../images/comms-infra.pmg" alt="Satellite communication array" />
+      </div>
+      <div class="col-md-6">
+        <h3><i class="fa-solid fa-wifi service-icon"></i> Communication Infrastructure</h3>
+        <p>Leverage our Hermes Net constellation for secure and scalable communications. Our infrastructure supports telemetry, remote sensing, and disaster recovery operations with low-latency global coverage.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center service-feature flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="../images/research-lab.png" alt="Advanced aerospace lab" />
+      </div>
+      <div class="col-md-6">
+        <h3><i class="fa-solid fa-flask service-icon"></i> Applied R&D Partnerships</h3>
+        <p>Collaborate with StarReach on frontier technologies including AI-guided navigation, lunar environmental systems, and deep-space imaging. Together, we can push the boundaries of space innovation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trusted-section">
+  <section class="trusted-section">
+    <h2 class="fw-bold">Trusted by Thousands of Global Brands</h2>
+    <div class="trusted-logos">
+      <img src="../images/logo1.png" alt="OrbitalCore Systems">
+      <img src="../images/logo2.png" alt="StratoNova Dynamics">
+      <img src="../images/logo3.png" alt="HelionForge Technologies">
+      <img src="../images/logo4.png" alt="Mars Commuter Express">
+      <img src="../images/logo5.png" alt="QuantaCelestial Networks">
+      <img src="../images/logo6.png" alt="Gefälscht CompuTech">
+      <img src="../images/logo7.png" alt="Dream Destination">
+      <img src="../images/logo8.png" alt="NovaDrum Technologies">
     </div>
   </section>
 
