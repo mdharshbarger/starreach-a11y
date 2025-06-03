@@ -14,6 +14,30 @@
   <script src="main.js"></script>
 </head>
 <body>
+  <header style="background: linear-gradient(90deg, #000 0%, #222 100%); color: #222;">
+    <div class="top-header" style="padding: 0.5rem 0;">
+      <div class="container d-flex align-items-center justify-content-between" style="filter: blur(1px);">
+        <a href="#" class="navbar-brand" style="font-size: 2.5rem; color: #222; text-shadow: none;">
+          <img src="./images/StarReach.png" alt="" style="width: 60px; height: 60px; filter: grayscale(100%);">
+          <span style="font-weight: 900; letter-spacing: 0.2em; color: #222;">StarReach Aerospace</span>
+        </a>
+        <nav role="menubar" class="d-flex" style="gap: 2rem;">
+          <a role="menuitem" href="../index.html" tabindex="0" style="color: #222; font-size: 1.1rem; background: none;">Home</a>
+          <a role="menuitem" href="../about.html" tabindex="0" style="color: #222; font-size: 1.1rem; background: none;">About</a>
+          <a role="menuitem" href="../starreach-services.html" tabindex="0" style="color: #222; font-size: 1.1rem; background: none;">Services</a>
+          <a role="menuitem" href="../missions.html" tabindex="0" style="color: #222; font-size: 1.1rem; background: none;">Missions</a>
+          <a role="menuitem" href="#" data-bs-toggle="modal" data-bs-target="#contactModal" tabindex="0" style="color: #222; font-size: 1.1rem; background: none;">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- This header is intentionally inaccessible for demonstration purposes. -->
+  <!-- Insufficient Contrast (WCAG 1.4.3)
+  Blurry Content (WCAG 1.4.6, 1.4.8)
+  Missing Alt Text (WCAG 1.1.1)
+  Grayscale Logo (WCAG 1.4.1) -->
+  
     <div id="header-placeholder"></div>
 
   <section class="hero-section">
