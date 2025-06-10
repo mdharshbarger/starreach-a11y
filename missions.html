@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StarReach Aerospace | Missions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarReach Arerospace | Where innovation meets the stars.</title>
   <link rel="icon" href="images/starreach.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="main-styles.css"> 
   <link rel="stylesheet" href="missions.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
-  <!-- Scripts -->
+  <!-- Bootstrap JS first -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS for header, footer, and modal -->
   <script src="main.js"></script>
 </head>
 <body>
   <div id="header-placeholder"></div>
 
-  <!-- Hero Section -->
   <header class="hero" style="background-image: url('images/stars-2616537_1280.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-text text-center">
@@ -24,8 +24,8 @@
       <p class="lead">From Earth orbit to deep space—our journey begins here.</p>
     </div>
   </header>
-
-  <!-- Mission Grid -->
+  
+    <!-- Mission Grid -->
   <section class="container py-5">
     <div class="row text-center mb-4">
       <h2 class="section-title">Mission Portfolio</h2>
@@ -97,14 +97,12 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
+  
   <div id="footer-placeholder"></div>
+  <!-- Contact Modal Container -->
+  <div id="modal-container"></div>
 
-  <script>
-    // Inject header/footer
-    fetch('header.html').then(res => res.text()).then(data => document.getElementById('header-placeholder').innerHTML = data);
-    fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
-  </script>
 </body>
 </html>
+
+

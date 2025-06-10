@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StarReach Aerospace | Missions</title>
+  <link rel="icon" href="images/starreach.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="missions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Hero Section -->
+  <header class="hero" style="background-image: url('images/stars-2616537_1280.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text text-center">
+      <h1 class="display-4 fw-bold">Explore Our Missions</h1>
+      <p class="lead">From Earth orbit to deep space—our journey begins here.</p>
+    </div>
+  </header>
+
+  <!-- Mission Grid -->
+  <section class="container py-5">
+    <div class="row text-center mb-4">
+      <h2 class="section-title">Mission Portfolio</h2>
+    </div>
+    <div class="row g-4">
+
+      <!-- Mission Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card mission-card position-relative shadow">
+          <span class="mission-badge">Orbit</span>
+          <img src="images/hermes-thumb.jpg" class="card-img-top" alt="Hermes Net Satellite">
+          <div class="card-body">
+            <h5 class="card-title">Hermes Net</h5>
+            <p class="card-text">A low Earth orbit communications mesh powering global connectivity.</p>
+            <a href="missions\hermes-net-mission.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Odin’s Eye -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card mission-card position-relative shadow">
+          <span class="mission-badge">Deep Orbit</span>
+            <img src="images/odin-thumb.jpg" class="card-img-top" alt="Odin's Eye Telescope">
+            <div class="card-body">
+              <h5 class="card-title">Odin’s Eye</h5>
+              <p class="card-text">A high-orbit telescope platform observing from L2 halo orbit.</p>
+              <a href="missions\odins-eye.html" class="btn btn-primary">View Mission</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thor Lunar Lander -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card mission-card position-relative shadow">
+          <span class="mission-badge">Lunar Base</span>
+          <img src="images/thor-thumb.jpg" class="card-img-top" alt="Thor Lunar Mission">
+          <div class="card-body">
+            <h5 class="card-title">Thor</h5>
+            <p class="card-text">Our crown jewel—modular lunar missions enabling a permanent Moon base.</p>
+            <a href="missions\thor-moon.html" class="btn btn-primary">Discover Thor</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ares Hauler -->
+      <div class="col-md-6 col-lg-4">
+      <div class="card mission-card position-relative shadow">
+          <span class="mission-badge">Mars Base</span>
+          <img src="images/ares-thumb.jpg" class="card-img-top" alt="Ares Hauler">
+          <div class="card-body">
+            <h5 class="card-title">Ares Hauler</h5>
+            <p class="card-text">Allowing the Humankind to conquer the Red Planet.</p>
+            <a href="missions\ares-hauler.html" class="btn btn-primary">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chiron Prode -->
+      <div class="col-md-6 col-lg-4">
+      <div class="card mission-card position-relative shadow">
+          <span class="mission-badge">Deep Space</span>
+          <img src="images/chiron-thumb.jpg" class="card-img-top" alt="Chiron Probe">          <div class="card-body">
+            <h5 class="card-title">Chiron Probe</h5>
+            <p class="card-text">Exploring our Galaxy for our next adventure.</p>
+            <a href="missions\chiron-probe.html" class="btn btn-primary">Chiron Probe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <!-- Contact Modal Container -->
+  <div id="modal-container"></div>
+
+<script>
+  fetch('../header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+  fetch('../footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+</body>
+</html>
