@@ -144,3 +144,25 @@ body {
   visibility: visible;
   opacity: 1;
 }
+
+.overview {
+  background-color: #111; /* Deep gray-black for visual separation */
+  color: #f0f0f0;          /* Light text for contrast */
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  line-height: 1.6;
+}
+
+.overview h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  border-bottom: 2px solid #555;
+  padding-bottom: 0.5rem;
+}
+
+.overview p {
+  margin-bottom: 1rem;
+}
