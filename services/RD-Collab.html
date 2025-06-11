@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied R&D Partnerships | StarReach Aerospace</title>
+  <link rel="icon" href="../images/starreach.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../main-styles.css" />
+  <link rel="stylesheet" href="../services.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Hero Section -->
+  <div class="hero-section service-hero" style="background-image: url('../images/rd-collaboration.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text text-center">
+      <h1>Applied R&D Partnerships</h1>
+      <p class="lead">Where bold ideas launch and new technologies emerge.</p>
+    </div>
+  </div>
+
+  <!-- Service Overview -->
+  <section class="service-overview container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="section-title">Collaborate to Accelerate</h2>
+        <p>
+          From concept to prototype, StarReach Aerospace partners with universities, labs, and forward-thinking businesses to co-develop technologies that push spaceflight forward. Whether you’re optimizing materials for deep space radiation or advancing AI-assisted orbital routing, our teams bring engineering rigor, operational experience, and mission-tested platforms to the table.
+        </p>
+        <ul class="custom-bullets mt-3">
+          <li><strong>Rapid Prototyping:</strong> Move from idea to field test with StarReach’s accelerated design loop</li>
+          <li><strong>Lab-to-Orbit Testing:</strong> Deploy experimental payloads via Hermes or Odin platforms</li>
+          <li><strong>Modular Integration:</strong> Plug into mission architectures without custom redesign</li>
+          <li><strong>Dual-Use Innovation:</strong> Translate defense and commercial research into space-ready applications</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <img src="../images/rd-lab-partnerships.svg" alt="StarReach Lab Collaboration Graphic" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Metrics -->
+  <section class="impact-metrics bg-dark text-white py-5">
+    <div class="container text-center">
+      <h3 class="mb-4">Partnership Outcomes</h3>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <h4>22</h4>
+          <p>Active R&D partnerships in 2025</p>
+        </div>
+        <div class="col-md-3">
+          <h4>7</h4>
+          <p>Published innovations from joint research</p>
+        </div>
+        <div class="col-md-3">
+          <h4>5</h4>
+          <p>Lab prototypes deployed to orbit</p>
+        </div>
+        <div class="col-md-3">
+          <h4>∞</h4>
+          <p>Possibilities when vision meets execution</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Quotes -->
+  <section class="client-quotes py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">What Our Collaborators Say</h3>
+      <div id="quote-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <blockquote class="blockquote">
+              <p class="mb-3">"StarReach didn’t just support our research—they helped shape it into something deployable."</p>
+              <footer class="blockquote-footer">Lead Engineer, Celestial Dynamics Lab</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote">
+              <p class="mb-3">"No red tape. Just smart people solving hard problems together."</p>
+              <footer class="blockquote-footer">Innovation Director, Polaris Ventures</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Button -->
+  <div class="text-center my-5">
+    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#collabModal">
+      Start a Collaboration
+    </button>
+  </div>
+
+  <!-- Collaboration Inquiry Modal -->
+  <div class="modal fade" id="collabModal" tabindex="-1" aria-labelledby="collabModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="collabModalLabel">Collaboration Inquiry</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="collabForm">
+          <div class="modal-body">
+            <p class="mb-4">Interested in partnering with StarReach Aerospace? Tell us a bit about your project and let’s explore the possibilities.</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Your Name *</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="col-md-6">
+                <label for="organization" class="form-label">Organization *</label>
+                <input type="text" class="form-control" id="organization" required>
+              </div>
+              <div class="col-md-6">
+                <label for="projectFocus" class="form-label">Project Focus Area *</label>
+                <select class="form-select" id="projectFocus" required>
+                  <option selected disabled value="">Choose one...</option>
+                  <option>AI / Autonomy</option>
+                  <option>Materials Science</option>
+                  <option>Orbital Systems</option>
+                  <option>Data & Analytics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="details" class="form-label">Brief Description *</label>
+                <textarea class="form-control" id="details" rows="4" required></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <small class="text-muted me-auto">* All fields required</small>
+            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('collabForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Thank you! Your inquiry has been submitted.");
+      const modal = bootstrap.Modal.getInstance(document.getElementById('collabModal'));
+      modal.hide();
+      this.reset();
+    });
+  </script>
+  <script src="../main.js"></script>
+</body>
+</html>
