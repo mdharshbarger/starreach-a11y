@@ -1,0 +1,82 @@
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      background: #111;
+      color: #eee;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-image: url('assets/images/concept-to-reality-hero.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero-text h1 {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    .hero-text p {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .video-container {
+      margin: 4rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+    .founder-section {
+      padding: 4rem 1rem;
+      background: #1a1a1a;
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+    }
+    .founder-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+    .founder-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      .hero-text p {
+        font-size: 1.1rem;
+      }
+    }
