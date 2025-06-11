@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StarReach Arerospace | Where innovation meets the stars.</title>
-  <link rel="icon" href="images/starreach.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="main-styles.css"> 
-  <!-- Bootstrap JS first -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarReach Aerospace | Where innovation meets the stars.</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/StarReach.png" type="image/png" />
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main-styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+  <!-- Scripts -->
+  <script defer src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS for header, footer, and modal -->
-  <script src="main.js"></script>
 </head>
 <body>
+
+  <!-- ❌ No skip link included (WCAG 2.4.1) -->
   <div id="header-placeholder"></div>
 
+  <!-- ❌ No <main> landmark (WCAG 1.3.1) -->
   <section class="hero-section">
-    <img src="images/banner.jpg" alt="View of Earth from space with satellite in orbit" class="hero-image">
-    <div class="hero-text">
+    <!-- ❌ Decorative image with informative alt (WCAG 1.1.1) -->
+    <img src="assets/images/banner.jpg" alt="View of Earth from space with satellite in orbit" class="hero-image" />
+    <!-- ❌ Contrast fail intentionally styled in CSS (WCAG 1.4.3) -->
+    <div class="hero-text low-contrast">
       Welcome to StarReach Aerospace, where innovation meets the stars.
     </div>
   </section>
 
-    <section class="mission-highlights">
-      <h2>Mission Highlights</h2>
-      <p>From orbital satellites to Mars-bound cargo landers, StarReach Aerospace continues to redefine what's possible in aerospace technology.</p>
-      <div class="mission-list">
-        <div class="mission-item" onclick="window.location='missions/hermes-net-mission.html'">
-          <img src="images/leo-comms.jpg" alt="Hermes Net Communication Array">
-          <div class="mission-title">Hermes Net<br><span class="mission-subtitle">LEO Comms Array</span></div>
-        </div>
-        <div class="mission-item" onclick="window.location='missions/odins-eye.html'">
-          <img src="images/orbital-telescope.jpg" alt="Odin's Eye Telescope Platform">
-          <div class="mission-title">Odin's Eye<br><span class="mission-subtitle">Orbital Telescope Platform</span></div>
-        </div>
-        <div class="mission-item" onclick="window.location='missions/thor-moon.html'">
-          <img src="images/thor-moon.jpg" alt="Thor Moon Mission Lander">
-          <div class="mission-title">Thor Moon Mission<br><span class="mission-subtitle">Deep Space Lunar Descent</span></div>
-        </div>
-        <div class="mission-item" onclick="window.location='missions/ares-hauler.html'">
-          <img src="images/mars-lander.jpg" alt="Ares Hauler Cargo Lander">
-          <div class="mission-title">Ares Hauler<br><span class="mission-subtitle">Mars Cargo Lander</span></div>
-        </div>
-        <div class="mission-item" onclick="window.location='missions/chiron-probe.html'">
-          <img src="images/asteroid-surveyor.jpg" alt="Chiron Probe for Asteroid Survey">
-          <div class="mission-title">Chiron Probe<br><span class="mission-subtitle">Asteroid Surveyor</span></div>
-        </div>
-      </div>
-    </section>
+  <section class="mission-highlights">
+    <h2>Mission Highlights</h2>
+    <p>From orbital satellites to Mars-bound cargo landers, StarReach Aerospace continues to redefine what's possible in aerospace technology.</p>
 
+    <div class="mission-list">
+      <!-- ❌ Onclick divs with no keyboard access (WCAG 2.1.1) -->
+      <div class="mission-item" onclick="window.location='missions-pages/hermes-net-mission.html'">
+        <img src="assets/images/leo-comms.jpg" alt="Hermes Net Communication Array" />
+        <div class="mission-title">Hermes Net<br><span class="mission-subtitle">LEO Comms Array</span></div>
+      </div>
+      <div class="mission-item" onclick="window.location='missions-pages/odins-eye.html'">
+        <img src="assets/images/orbital-telescope.jpg" alt="Odin's Eye Telescope Platform" />
+        <div class="mission-title">Odin's Eye<br><span class="mission-subtitle">Orbital Telescope Platform</span></div>
+      </div>
+      <div class="mission-item" onclick="window.location='missions-pages/thor-moon.html'">
+        <img src="assets/images/thor-moon.jpg" alt="Thor Moon Mission Lander" />
+        <div class="mission-title">Thor Moon Mission<br><span class="mission-subtitle">Deep Space Lunar Descent</span></div>
+      </div>
+      <div class="mission-item" onclick="window.location='missions-pages/ares-hauler.html'">
+        <img src="assets/images/mars-lander.jpg" alt="Ares Hauler Cargo Lander" />
+        <div class="mission-title">Ares Hauler<br><span class="mission-subtitle">Mars Cargo Lander</span></div>
+      </div>
+      <div class="mission-item" onclick="window.location='missions-pages/chiron-probe.html'">
+        <img src="assets/images/asteroid-surveyor.jpg" alt="Chiron Probe for Asteroid Survey" />
+        <div class="mission-title">Chiron Probe<br><span class="mission-subtitle">Asteroid Surveyor</span></div>
+      </div>
+    </div>
+  </section>
 
   <section class="timeline-section">
+    <!-- ❌ Heading structure skips levels (WCAG 1.3.1) -->
     <h2 class="section-title text-center">Mission Timeline</h2>
     <div class="timeline">
       <div class="timeline-item">
@@ -92,19 +103,15 @@
     </div>
   </section>
 
- 
-
   <section class="crew-section">
     <h2>Meet the Crew</h2>
-    <img src="images/crew.jpg" alt="The StarReach Aerospace team standing proudly together on a launch pad">
-    <p>At StarReach Aerospace, our team includes expert engineers, test pilots, mission analysts, and explorers driven by one goal: pushing humanity further into the stars. We believe exploration is our greatest purpose and our boldest opportunity.</p>
+    <!-- ❌ Unclear alt text on important image (WCAG 1.1.1) -->
+    <img src="assets/images/crew.jpg" alt="The StarReach Aerospace team" />
+    <p>Our team includes engineers, test pilots, and mission analysts driven by one goal: pushing humanity further into the stars.</p>
   </section>
-  
+
   <div id="footer-placeholder"></div>
-  <!-- Contact Modal Container -->
   <div id="modal-container"></div>
 
 </body>
 </html>
-
-

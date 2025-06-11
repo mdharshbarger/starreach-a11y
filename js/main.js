@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
   // Load header
-  fetch("/header.html")
+  fetch("/components/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
@@ -24,14 +24,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
   // Load footer
-  fetch("/footer.html")
+  fetch("/components/footer.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
 
   // Load contact modal
-  fetch("/contact-modal.html")
+  fetch("/components/contact-modal.html")
     .then(response => response.text())
     .then(html => {
       document.getElementById("modal-container").innerHTML = html;
