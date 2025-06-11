@@ -40,6 +40,34 @@
     .node-box:hover {
       fill: rgba(0, 255, 255, 0.1);
     }
+    @keyframes glowPulse {
+        0% {
+            stroke: #00ffff;
+            stroke-width: 2;
+            filter: drop-shadow(0 0 2px #00ffff);
+        }
+        50% {
+            stroke: #00ccff;
+            stroke-width: 3;
+            filter: drop-shadow(0 0 6px #00ccff);
+        }
+        100% {
+            stroke: #00ffff;
+            stroke-width: 2;
+            filter: drop-shadow(0 0 2px #00ffff);
+        }
+        }
+
+    .node-box:hover {
+        fill: rgba(0, 255, 255, 0.1);
+        animation: glowPulse 1.5s infinite ease-in-out;
+        }
+    .svg-map g:hover text {
+        fill: #00ffff;
+        filter: drop-shadow(0 0 4px #00ffff);
+}
+
+
   </style>
   <script>
     function showMission(id) {
