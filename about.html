@@ -4,196 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | StarReach Aerospace</title>
-  <link rel="icon" href="../images/starreach.png" type="image/png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="main-styles.css"> 
-  <!-- Bootstrap JS first -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS for header, footer, and modal -->
-  <script src="main.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      scroll-behavior: smooth;
-      background: #111;
-      color: #eee;
-    }
-
-.hero {
-  position: relative;
-  height: 100vh;
-  background-image: url('../images/concept-to-reality-hero.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  overflow: hidden;
-  z-index: 1;
-}
-
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
-
-    .hero-text h1 {
-      font-size: 4rem;
-      font-weight: bold;
-    }
-
-    .hero-text p {
-      font-size: 1.5rem;
-      font-style: italic;
-      margin-top: 1rem;
-    }
-
-    section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .video-container {
-      margin: 4rem 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .founder-section {
-      padding: 4rem 1rem;
-      background: #1a1a1a;
-      border-top: 2px solid #333;
-      border-bottom: 2px solid #333;
-    }
-
-    .founder-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #00bcd4;
-    }
-
-    .founder-section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .hero-text h1 {
-        font-size: 2.5rem;
-      }
-      .hero-text p {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+  <link rel="icon" href="assets/images/StarReach.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main-styles.css" />
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
 
-  <!-- Sticky Header -->
+  <!-- ❌ No skip link (WCAG 2.4.1) -->
   <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <header class="hero" style="background-image: url('../images/concept-to-reality-hero.png');">
+  <!-- HERO Section -->
+  <header class="hero" style="background-image: url('assets/images/concept-to-reality-hero.png');">
     <div class="hero-overlay"></div>
     <div class="hero-text text-center">
-        <h1>About StarReach Aerospace</h1>
-        <p>From Imagination to Ignition</p>
+      <h1>About StarReach Aerospace</h1>
+      <p>From Imagination to Ignition</p>
     </div>
-    </header>
+  </header>
 
-
-    <!-- Founder Section -->
+  <!-- FOUNDER Section -->
   <section class="container founder-section">
     <div class="row justify-content-center">
       <div class="col-lg-10">
+        <!-- ❌ Improper heading level (h2 should follow h1, not repeat multiple times) (WCAG 1.3.1) -->
         <h2>Our Founder: RH Locke</h2>
         <p>
           StarReach Aerospace was born from a single question: <em>What if the final frontier wasn’t final at all?</em>
         </p>
         <p>
-          RH Locke didn’t come from legacy aerospace. He wasn’t backed by billionaires or national agencies. He didn't start with selling cars or books. He was a dreamer with a pen, a vision, and a firm belief that space exploration belongs to all of us.
+          RH Locke didn’t come from legacy aerospace... He was a dreamer with a pen, a vision, and a firm belief that space exploration belongs to all of us.
         </p>
         <p>
-          In a converted workshop just outside Austin, Locke began sketching out ideas not just for ships, but for systems—reusable, modular, human-centric platforms for space logistics, science, and long-term habitation. His early designs became the backbone of what would one day become the <strong>Hermes Network</strong>, <strong>Odin’s Eye</strong>, and the crowning jewel of our program, <strong>Project Thor</strong>.
+          His early designs became the backbone of <strong>Hermes Network</strong>, <strong>Odin’s Eye</strong>, and <strong>Project Thor</strong>.
         </p>
         <p>
-          More than a founder, RH Locke is a storyteller. He reminds us that every mission we launch is a chapter in something larger. Something shared. Something human.
+          More than a founder, RH Locke is a storyteller... Something shared. Something human.
         </p>
         <p class="fw-bold">
           StarReach exists because one person looked up—and decided not to wait for permission.
         </p>
+        <!-- ❌ Link styled as plain text, not visually distinct (WCAG 1.4.1) -->
+        <p>Learn more about <a href="missions.html" style="color: #eee; text-decoration: none;">our missions</a>.</p>
       </div>
     </div>
   </section>
 
-
-  <!-- Video Section -->
-  <!-- Video Section -->
-<section class="video-section py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="ratio ratio-16x9 video-wrapper">
-          <video controls poster="../images/StarReach.jpg">
-            <source src="../images/StarReach.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+  <!-- VIDEO Section -->
+  <section class="video-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- ❌ No captions track, no transcript, no audio description (WCAG 1.2.2, 1.2.3, 1.2.5) -->
+          <!-- ❌ Missing aria-label or title to explain video context (WCAG 2.4.4) -->
+          <div class="ratio ratio-16x9 video-wrapper">
+            <video controls poster="assets/images/StarReach.jpg">
+              <source src="assets/video/StarReach.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <div id="footer-placeholder"></div>
-  <!-- Contact Modal Container -->
   <div id="modal-container"></div>
 
-  <!-- Bootstrap JS first -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS for header, footer, and modal -->
-  <script src="main.js"></script>
-
-
-  <!-- Scripts -->
-  <script>
-    // Scroll animation for fade-in sections
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>

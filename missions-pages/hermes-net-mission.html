@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Hermes Net - LEO Comms Array | StarReach Aerospace
+  </title>
+  <link href="../assets/images/starreach.png" rel="icon" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <link href="../css/main-styles.css" rel="stylesheet">
+   <link href="../css/missions-card.css" rel="stylesheet"/>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  </link>
+ </head>
+ <body>
+  <div id="header-placeholder">
+  </div>
+  <main>
+   <header class="hero" style="background-image: url('../assets/images/leo-comms.jpg'); background-size: cover; background-position: center;">
+    <div class="hero-overlay">
+    </div>
+    <div class="hero-text">
+     <h3>
+      Hermes Net
+     </h3>
+     <p>
+      LEO Communications Array
+     </p>
+    </div>
+   </header>
+   <section class="overview container">
+    <h3>
+     Mission Overview
+    </h3>
+    <p>
+     Hermes Net is StarReach Aerospace’s low Earth orbit (LEO) satellite array dedicated to revolutionizing global communications. By creating a mesh of interconnected satellites, Hermes Net delivers ultra-fast, low-latency connectivity even in the most remote regions of Earth. This constellation is the foundation of tomorrow’s interplanetary data relay. 
+      Hermes Net launches will utilize our next-generation reusable launch vehicle—designed for rapid turnaround and frequent deployment. This enables accelerated deployment of the full array following the success of the initial launch.
+    </p>
+    <div class="data-cards">
+     <div class="data-card">
+      <strong>
+       Mission Type
+      </strong>
+      <p>
+       LEO Communications
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Launch Date
+      </strong>
+      <p>
+       Q2 2026
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Satellite Count
+      </strong>
+      <p>
+       48 (initial phase)
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Coverage
+      </strong>
+      <p>
+       Global
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Bandwidth
+      </strong>
+      <p>
+       Up to 10 Gbps
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="launch-calendar container my-5 py-4">
+    <div class="section-title text-center mb-4">
+     <img alt="Mission Patch" src="../assets/images/mission-patch.png" style="height: 60px; margin-bottom: 10px;"/>
+     <h3 class="section-title">
+      Hermes Net Launch Manifest
+     </h3>
+    </div>
+    <p class="text-muted text-center mb-3">
+     Track upcoming Hermes Net satellite launches
+    </p>
+    <div class="accordion mt-3" id="launchCalendar">
+     <div class="accordion-item">
+      <h3 class="accordion-header" id="messengerHeader">
+       <button aria-controls="messengerCollapse" aria-expanded="true" class="accordion-button" data-bs-target="#messengerCollapse" data-bs-toggle="collapse" type="button">
+        <img alt="Messenger launch emblem" src="../assets/images/messenger.png" style="height: 50px; margin-right: 15px;"/>
+        Messenger - Q2 2026
+       </button>
+      </h3>
+      <div aria-labelledby="messengerHeader" class="accordion-collapse collapse show" data-bs-parent="#launchCalendar" id="messengerCollapse">
+       <div class="accordion-body">
+        <strong>
+         Number of Satellites:
+        </strong>
+        8
+        <br/>
+        <span class="badge bg-success">
+         Scheduled
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <h3 class="accordion-header" id="wingedCourierHeader">
+       <button aria-controls="wingedCourierCollapse" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#wingedCourierCollapse" data-bs-toggle="collapse" type="button">
+        <img alt="Winged Courier launch emblem" src="../assets/images/winged-courier.png" style="height: 50px; margin-right: 15px;"/>
+        Winged Courier - Q3 2026
+       </button>
+      </h3>
+      <div aria-labelledby="wingedCourierHeader" class="accordion-collapse collapse" data-bs-parent="#launchCalendar" id="wingedCourierCollapse">
+       <div class="accordion-body">
+        <strong>
+         Number of Satellites:
+        </strong>
+        8
+        <br/>
+        <span class="badge bg-secondary">
+         Planned
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <h3 class="accordion-header" id="skyHeraldHeader">
+       <button aria-controls="skyHeraldCollapse" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#skyHeraldCollapse" data-bs-toggle="collapse" type="button">
+        <img alt="Sky Herald launch emblem" src="../assets/images/sky-herald.png" style="height: 50px; margin-right: 15px;"/>
+        Sky Herald - Q4 2026
+       </button>
+      </h3>
+      <div aria-labelledby="skyHeraldHeader" class="accordion-collapse collapse" data-bs-parent="#launchCalendar" id="skyHeraldCollapse">
+       <div class="accordion-body">
+        <strong>
+         Number of Satellites:
+        </strong>
+        8
+        <br/>
+        <span class="badge bg-secondary">
+         Planned
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <h3 class="accordion-header" id="celestialRunnerHeader">
+       <button aria-controls="celestialRunnerCollapse" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#celestialRunnerCollapse" data-bs-toggle="collapse" type="button">
+        <img alt="Celestial Runner launch emblem" src="../assets/images/celestial-runner.png" style="height: 50px; margin-right: 15px;"/>
+        Celestial Runner - Q1 2027
+       </button>
+      </h3>
+      <div aria-labelledby="celestialRunnerHeader" class="accordion-collapse collapse" data-bs-parent="#launchCalendar" id="celestialRunnerCollapse">
+       <div class="accordion-body">
+        <strong>
+         Number of Satellites:
+        </strong>
+        8
+        <br/>
+        <span class="badge bg-secondary">
+         Planned
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <h3 class="accordion-header" id="orbitalMessengerHeader">
+       <button aria-controls="orbitalMessengerCollapse" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#orbitalMessengerCollapse" data-bs-toggle="collapse" type="button">
+        <img alt="Messenger launch emblem" src="../assets/images/orbital-messenger.png" style="height: 50px; margin-right: 15px;"/>
+        Orbital Messenger - Q2 2027
+       </button>
+      </h3>
+      <div aria-labelledby="orbitalMessengerHeader" class="accordion-collapse collapse" data-bs-parent="#launchCalendar" id="orbitalMessengerCollapse">
+       <div class="accordion-body">
+        <strong>
+         Number of Satellites:
+        </strong>
+        8
+        <br/>
+        <span class="badge bg-secondary">
+         Planned
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="accordion-item">
+      <h3 class="accordion-header" id="stellarCourierHeader">
+       <button aria-controls="stellarCourierCollapse" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#stellarCourierCollapse" data-bs-toggle="collapse" type="button">
+        <img alt="Floral Symphony launch emblem" src="../assets/images/floral-symphony.png" style="height: 50px; margin-right: 15px;"/>
+        Floral Symphony - Q3 2027
+       </button>
+      </h3>
+      <div aria-labelledby="stellarCourierHeader" class="accordion-collapse collapse" data-bs-parent="#launchCalendar" id="stellarCourierCollapse">
+       <div class="accordion-body">
+        <strong>
+         Number of Satellites:
+        </strong>
+        8
+        <br/>
+        <span class="badge bg-secondary">
+         Planned
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="text-center mt-4">
+     <button class="btn btn-primary btn-lg" data-bs-target="#launchPassModal" data-bs-toggle="modal">
+      Request a Launch Pass
+     </button>
+    </div>
+   </section>
+   <!-- Launch Pass Modal -->
+   <div aria-hidden="true" aria-labelledby="launchPassModalLabel" class="modal fade" id="launchPassModal" tabindex="-1">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title" id="launchPassModalLabel">
+        Request a Launch Pass
+       </h5>
+       <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+       </button>
+      </div>
+      <div class="modal-body">
+       <form id="launchPassForm" novalidate="">
+        <div class="mb-3">
+         <label class="form-label" for="launchSelect">
+          Select Launch
+         </label>
+         <select class="form-select" id="launchSelect" required="">
+          <option disabled="" selected="" value="">
+           Choose...
+          </option>
+          <option>
+           Messenger - Q2 2026
+          </option>
+          <option>
+           Winged Courier - Q3 2026
+          </option>
+          <option>
+           Sky Herald - Q4 2026
+          </option>
+          <option>
+           Celestial Runner - Q1 2027
+          </option>
+          <option>
+           Orbital Messenger - Q2 2027
+          </option>
+          <option>
+           Floral Symphony - Q3 2027
+          </option>
+         </select>
+         <div class="invalid-feedback">
+          Please select a launch.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="passType">
+          Pass Type
+         </label>
+         <select class="form-select" id="passType" required="">
+          <option disabled="" selected="" value="">
+           Choose...
+          </option>
+          <option>
+           General Admission
+          </option>
+          <option>
+           VIP
+          </option>
+          <option>
+           Press
+          </option>
+         </select>
+         <div class="invalid-feedback">
+          Please select a pass type.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="name">
+          Full Name
+         </label>
+         <input class="form-control" id="name" required="" type="text"/>
+         <div class="invalid-feedback">
+          Name is required.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="email">
+          Email Address
+         </label>
+         <input class="form-control" id="email" required="" type="email"/>
+         <div class="invalid-feedback">
+          Please enter a valid email address.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="phone">
+          Phone Number
+         </label>
+         <input class="form-control" id="phone" pattern="\d{10}" required="" type="tel"/>
+         <div class="invalid-feedback">
+          Enter a 10-digit phone number.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="affiliation">
+          Affiliation (Company/Organization)
+         </label>
+         <input class="form-control" id="affiliation" required="" type="text"/>
+         <div class="invalid-feedback">
+          Affiliation is required.
+         </div>
+        </div>
+       </form>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+        Cancel
+       </button>
+       <button class="btn btn-primary" type="submit">
+        Submit Request
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <section class="overview container">
+    <h3>
+     Launch Vehicle Specifications
+    </h3>
+    <p>
+     Hermes Net launches are powered by
+     <span class="tooltip-wrapper">
+      <strong>
+       SRV Boston
+      </strong>
+      <span class="tooltip-text">
+       Early designs explored alternative fuels—until someone lit a match near Boston. The explosion was strong enough to rip the gutters off a house from a mile away.
+      </span>
+     </span>
+     StarReach’s reusable heavy lifter, a two-stage orbital-class rocket built for quick refurbishment and high-cadence launches. 
+      With a powerful thrust-to-weight ratio and reusability systems that support rapid turnaround, 
+      SRV Boston is engineered for scale and efficiency.
+    </p>
+    <div class="data-cards">
+     <div class="data-card">
+      <strong>
+       Rocket Type
+      </strong>
+      <p>
+       SRV Boston (Reusable Heavy Lift Launch Vehicle)
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Stages
+      </strong>
+      <p>
+       2
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Payload Capacity
+      </strong>
+      <p>
+       16,500 kg to LEO
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Reusability
+      </strong>
+      <p>
+       First stage capable of up to 10 re-flights
+      </p>
+     </div>
+     <div class="data-card">
+      <strong>
+       Turnaround Time
+      </strong>
+      <p>
+       &lt; 7 days between flights
+      </p>
+     </div>
+    </div>
+    <h3 class="mt-5">
+     Comparison Chart
+    </h3>
+    <div class="table-responsive">
+     <table class="table table-striped table-bordered mt-3">
+      <thead class="table-dark">
+       <tr>
+        <th>
+         Vehicle
+        </th>
+        <th>
+         Stages
+        </th>
+        <th>
+         Payload to LEO
+        </th>
+        <th>
+         Reusability
+        </th>
+        <th>
+         Turnaround Time
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>
+         SRV Boston
+        </td>
+        <td>
+         2
+        </td>
+        <td>
+         16,500 kg
+        </td>
+        <td>
+         Up to 10 flights
+        </td>
+        <td>
+         &lt; 7 days
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Falcon 9 (SpaceX)
+        </td>
+        <td>
+         2
+        </td>
+        <td>
+         22,800 kg
+        </td>
+        <td>
+         Up to 15 flights
+        </td>
+        <td>
+         ~10 days
+        </td>
+       </tr>
+       <tr>
+        <td>
+         Vulcan Centaur (ULA)
+        </td>
+        <td>
+         2
+        </td>
+        <td>
+         27,200 kg
+        </td>
+        <td>
+         Expendable
+        </td>
+        <td>
+         N/A
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </section>
+   <section class="gallery container">
+    <h3>
+     Mission Gallery
+    </h3>
+    <div class="row">
+     <div class="col-md-6 d-flex align-items-center">
+      <img alt="Reusable Heavy Lift Launch Vehicle" src="../assets/images/launch-vehicle.jpg" style="width: 100%; max-height: 1000px; object-fit: cover;"/>
+     </div>
+     <div class="col-md-6 d-flex flex-column justify-content-between">
+      <img alt="Hermes Net satellite assembly in clean room" class="mb-3" src="../assets/images/clean-room.jpg" style="width: 100%;"/>
+      <img alt="Mission control team monitoring Hermes Net deployment" src="../assets/images/mission-control.jpg" style="width: 100%;"/>
+     </div>
+    </div>
+   </section>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+   </script>
+   <script src="../js/main.js">
+   </script>
+  </main>
+  <div id="modal-container">
+  </div>
+  <div id="footer-placeholder">
+  </div>
+ </body>
+</html>
