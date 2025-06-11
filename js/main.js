@@ -1,8 +1,7 @@
-// main.js — Loads header, footer, and modal with adaptive paths
+// main.js — GitHub Pages compatible, root-relative paths
 window.addEventListener('DOMContentLoaded', () => {
-  const path = window.location.pathname;
-  const basePath = path.includes("missions-pages") ? "../components/" : "components/";
-  const jsBase = path.includes("missions-pages") ? "../js/" : "js/";
+  // All assets are loaded using absolute paths from the repo root
+  const basePath = "/starreach-a11y/components/";
 
   // Load header
   fetch(`${basePath}header.html`)
@@ -10,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
 
-      // Add keyboard navigation to nav menu items
+      // Enable arrow key navigation for header menu
       const waitForMenu = setInterval(() => {
         const menuItems = document.querySelectorAll('[role="menuitem"]');
         if (menuItems.length > 0) {
@@ -46,12 +45,12 @@ window.addEventListener('DOMContentLoaded', () => {
         modal.addEventListener('shown.bs.modal', () => {
           const trap = bootstrap?.Modal?.getInstance(modal)?._focustrap;
           if (trap && typeof trap.deactivate === "function") {
-            trap.deactivate(); // ❌ Deliberately disabling for accessibility demo
+            trap.deactivate(); // ❌ Accessibility issue for students to catch
             console.warn("🚫 Focus trap deactivated for accessibility testing.");
           }
         });
 
-        // ❌ Accessibility issue: single-key shortcut without opt-out
+        // ❌ Single-key shortcut accessibility issue
         document.addEventListener('keydown', (e) => {
           if (e.key === 's') {
             const modalInstance = new bootstrap.Modal(modal);
