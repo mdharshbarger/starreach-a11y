@@ -4,68 +4,178 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StarReach Aerospace | Services</title>
-  <link rel="icon" href="assets/images/StarReach.png" type="image/png" />
+  <link rel="icon" href="../images/starreach.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/main-styles.css" />
-  <link rel="stylesheet" href="css/starreach-services.css" />
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../main-styles.css" />
+    <link rel="stylesheet" href="starreach-services-extra.css" />
 </head>
 <body>
-
-  <!-- ❌ No skip link (WCAG 2.4.1) -->
   <div id="header-placeholder"></div>
 
-  <!-- ❌ Carousel auto-rotates, no pause control (WCAG 2.2.2) -->
-  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets/images/service-slide1.jpg" class="d-block w-100" alt="StarReach spacecraft in orbit">
-      </div>
-      <div class="carousel-item">
-        <img src="assets/images/service-slide2.jpg" class="d-block w-100" alt="Launch vehicle on pad">
-      </div>
-    </div>
-  </div>
+<section class="hero-video-container">
+  <video autoplay loop playsinline class="hero-video" poster="../images/StarReach.jpg">
+    <source src="../video/StarReach_Services.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
 
   <section class="container py-5">
-    <!-- ❌ Heading skips (e.g., h3 before h2), no landmarks (WCAG 1.3.1) -->
-    <h3 class="text-center">Our Core Services</h3>
-    <div class="row">
-      <div class="col-md-4">
-        <!-- ❌ Image alt text lacks context (WCAG 1.1.1) -->
-        <img src="assets/images/audit-icon.png" class="img-fluid mb-3" alt="Audit icon">
-        <h4>Auditing of Digital Assets</h4>
-        <!-- ❌ Color only used to emphasize importance (WCAG 1.4.1) -->
-        <p>Our <span style="color: blue;">certified engineers</span> perform deep audits of aerospace systems.</p>
-        <a href="services/auditing.html" class="btn btn-outline-primary">Explore Audits</a>
+    <div class="text-center mb-5">
+      <h2 class="display-6 text-primary mb-3">Why Work With StarReach?</h2>
+      <p class="lead text-muted">Our services aren’t just checkboxes — they’re the living systems behind humanity’s next great leap.</p>
+      <p class="text-muted">Each offering is forged in the crucible of mission-critical engineering, pressure-tested through the demands of lunar descent modules, deep-space observatories, and orbital comms arrays. When you work with StarReach, you’re not just buying services — you’re investing in the technology we use to build the future.</p>
+    </div>
+
+    <div class="text-center mb-5">
+      <h2 class="display-6 text-primary mb-3">What We Offer</h2>
+      <p class="text-muted">Delivering value through expertise while fueling our vision for deep space exploration.</p>
+    </div>
+
+    <div class="row align-items-center service-feature bg-light p-4 rounded shadow-lg">
+      <div class="col-md-6">
+        <img src="../images/launch-systems.png" alt="Rocket on launch pad" class="img-fluid rounded" />
       </div>
-      <div class="col-md-4">
-        <img src="assets/images/training-icon.png" class="img-fluid mb-3" alt="Training icon">
-        <h4>Training</h4>
-        <p>Equip your teams with the skills needed to manage orbital and planetary systems.</p>
-        <a href="services/training.html" class="btn btn-outline-primary">Explore Training</a>
+      <div class="col-md-6">
+        <div class="text-center text-md-start">
+          <h3 class="display-6 text-primary mb-3"><i class="fa-solid fa-rocket service-icon me-2"></i> Launch Systems Consulting</h3>
+          <p class="lead text-muted">Plan, design, and optimize launch-ready systems for any orbital target. From payload integration to stress management and vibration mitigation, our team ensures you’re cleared for takeoff.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Explore Launch Services</a>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="assets/images/strategy-icon.png" class="img-fluid mb-3" alt="Strategy icon">
-        <h4>Strategic Assessment</h4>
-        <p>From mission planning to post-launch analytics, we offer full-service analysis.</p>
-        <a href="services/strategy.html" class="btn btn-outline-primary">Explore Strategy</a>
+    </div>
+
+    <div class="row align-items-center service-feature flex-md-row-reverse bg-light p-4 rounded shadow-lg">
+      <div class="col-md-6">
+        <img src="../images/mission-architecture.png" alt="Spacecraft blueprint design" class="img-fluid rounded" />
+      </div>
+      <div class="col-md-6">
+        <div class="text-center text-md-start">
+          <h3 class="display-6 text-primary mb-3"><i class="fa-solid fa-satellite service-icon me-2"></i> Mission Architecture</h3>
+          <p class="lead text-muted">From initial requirements to launch, we build modular systems inspired by our Hermes and Ares missions. StarReach’s architecture services empower clients with adaptable spacecraft systems ready for LEO, lunar, or interplanetary travel.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Explore Mission Design</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center service-feature bg-light p-4 rounded shadow-lg">
+      <div class="col-md-6">
+        <img src="../images/comms-infra.png" alt="Satellite communication array" class="img-fluid rounded" />
+      </div>
+      <div class="col-md-6">
+        <div class="text-center text-md-start">
+          <h3 class="display-6 text-primary mb-3"><i class="fa-solid fa-wifi service-icon me-2"></i> Communication Infrastructure</h3>
+          <p class="lead text-muted">Leverage our Hermes Net constellation for secure and scalable communications. Our infrastructure supports telemetry, remote sensing, and disaster recovery operations with low-latency global coverage.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Explore Connectivity</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center service-feature flex-md-row-reverse bg-light p-4 rounded shadow-lg">
+      <div class="col-md-6">
+        <img src="../images/research-lab.png" alt="Advanced aerospace lab" class="img-fluid rounded" />
+      </div>
+      <div class="col-md-6">
+        <div class="text-center text-md-start">
+          <h3 class="display-6 text-primary mb-3"><i class="fa-solid fa-flask service-icon me-2"></i> Applied R&D Partnerships</h3>
+          <p class="lead text-muted">Collaborate with StarReach on frontier technologies including AI-guided navigation, lunar environmental systems, and deep-space imaging. Together, we can push the boundaries of space innovation.</p>
+          <a href="#" class="btn btn-outline-primary mt-3">Explore R&D Collaborations</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <h2 class="text-primary display-6">24+</h2>
+          <p class="text-muted">Orbital Platforms Integrated</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="text-primary display-6">9/10</h2>
+          <p class="text-muted">Client Satisfaction on Deployments</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="text-primary display-6">3x</h2>
+          <p class="text-muted">Faster Launch Readiness with Our Systems</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="text-primary display-6">100 TB+</h2>
+          <p class="text-muted">Data Processed Monthly via Hermes Net</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ❌ Autoplay video, no captions or description (WCAG 1.2.2, 1.2.3) -->
-  <section class="video-section container py-5">
-    <h3 class="text-center">Inspiration Through Action</h3>
-    <video autoplay loop muted playsinline poster="assets/images/StarReach.jpg" class="w-100">
-      <source src="assets/video/StarReach.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+  <section class="trusted-section container text-center my-5">
+    <h2 class="fw-bold">Trusted by Thousands of Global Brands</h2>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-6 col-md-3 p-3 order-4">
+        <img src="../images/logo1.png" alt="OrbitalCore Systems" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3 order-3">
+        <img src="../images/logo2.png" alt="StratoNova Dynamics" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3 order-2">
+        <img src="../images/logo3.png" alt="HelionForge Technologies" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3 order-1">
+        <img src="../images/logo4.png" alt="Mars Commuter Express" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3">
+        <img src="../images/logo5.png" alt="QuantaCelestial Networks" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3">
+        <img src="../images/logo6.png" alt="Gefälscht CompuTech" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3">
+        <img src="../images/logo7.png" alt="Dream Destination" class="img-fluid">
+      </div>
+      <div class="col-6 col-md-3 p-3">
+        <img src="../images/logo8.png" alt="NovaDrum Technologies" class="img-fluid">
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <div class="text-center mb-5">
+      <h2 class="display-6 text-primary mb-3">What Our Clients Say</h2>
+    </div>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="p-5 border rounded shadow-sm bg-light text-center">
+            <p class="lead text-muted">“StarReach took our orbital relay design from concept to deployment. Their engineering team became an extension of our own.”</p>
+            <p class="lead text-muted">— Jenna Alvarez, CTO, OrbitalCore Systems</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="p-5 border rounded shadow-sm bg-light text-center">
+            <p class="lead text-muted">“Thanks to StarReach, we met our lunar payload window with days to spare. The modular design recommendations were a game changer.”</p>
+            <p class="lead text-muted">— Dr. Erik Tanaka, Lead Engineer, QuantaCelestial Networks</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="p-5 border rounded shadow-sm bg-light text-center">
+            <p class="lead text-muted">“No red tape. No delays. Just high-performance systems and absolute clarity every step of the way.”</p>
+            <p class="lead text-muted">— Lisette Kumar, Program Director, NovaDrum Technologies</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </section>
 
   <div id="footer-placeholder"></div>
   <div id="modal-container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../main.js"></script>
 </body>
 </html>
