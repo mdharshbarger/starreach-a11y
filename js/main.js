@@ -1,11 +1,16 @@
+// main.js — Loads header, footer, and modal with adaptive paths
 window.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+  const basePath = path.includes("missions-pages") ? "../components/" : "components/";
+  const jsBase = path.includes("missions-pages") ? "../js/" : "js/";
+
   // Load header
-  fetch("/components/header.html")
+  fetch(`${basePath}header.html`)
     .then(response => response.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
 
-      // Enable keyboard arrow navigation
+      // Add keyboard navigation to nav menu items
       const waitForMenu = setInterval(() => {
         const menuItems = document.querySelectorAll('[role="menuitem"]');
         if (menuItems.length > 0) {
@@ -24,14 +29,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
   // Load footer
-  fetch("/components/footer.html")
+  fetch(`${basePath}footer.html`)
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
 
   // Load contact modal
-  fetch("/components/contact-modal.html")
+  fetch(`${basePath}contact-modal.html`)
     .then(response => response.text())
     .then(html => {
       document.getElementById("modal-container").innerHTML = html;
@@ -41,10 +46,17 @@ window.addEventListener('DOMContentLoaded', () => {
         modal.addEventListener('shown.bs.modal', () => {
           const trap = bootstrap?.Modal?.getInstance(modal)?._focustrap;
           if (trap && typeof trap.deactivate === "function") {
-            trap.deactivate();
+            trap.deactivate(); // ❌ Deliberately disabling for accessibility demo
             console.warn("🚫 Focus trap deactivated for accessibility testing.");
-          } else {
-            console.warn("⚠️ Could not find focus trap to deactivate.");
+          }
+        });
+
+        // ❌ Accessibility issue: single-key shortcut without opt-out
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 's') {
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
+            console.warn("⚠️ Modal opened via single-key shortcut (accessibility violation).");
           }
         });
       }
