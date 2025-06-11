@@ -284,3 +284,7 @@ footer .social-icons a:hover {
 h2,p {
   color: white !important;
 }
+.founder-section {
+  background-color: #111;
+  padding: 4rem 1rem;
+}
