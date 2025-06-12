@@ -1,0 +1,38 @@
+    .region-tooltip {
+      position: absolute;
+      background: rgba(0, 217, 255, 0.95);
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.2s;
+    }
+    .visually-hidden { display: none; }
+    .footprint {
+      fill: #00ffff;
+      opacity: 0.12;
+      stroke: #00ffff;
+      stroke-opacity: 0.5;
+      stroke-width: 1;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .footprint:hover { opacity: 0.25; }
+    .orbit {
+      stroke: #00d9ff;
+      stroke-opacity: 0.2;
+      fill: none;
+      stroke-dasharray: 8 8;
+      animation: orbitFlow 4s linear infinite;
+    }
+    @keyframes orbitFlow {
+      to { stroke-dashoffset: -16; }
+    }
+    .land {
+      fill: #0a0f2c;
+      stroke: #00d9ff;
+      stroke-width: 0.2;
+      opacity: 0.9;
+    }

@@ -4,38 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Communication Infrastructure | StarReach Aerospace</title>
-  <link rel="icon" href="../assets/images/starreach.png" type="image/png">
+  <link rel="icon" href="../assets/images/StarReach.png" type="image/png">
+  <link rel="stylesheet" href="../css/connectivity.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main-styles.css" />
-  <link rel="stylesheet" href="../css/services.css" />
-  <style>
-    .region-tooltip {
-      position: absolute;
-      background: rgba(0, 217, 255, 0.95);
-      color: #000;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      pointer-events: none;
-      z-index: 9999;
-      transition: opacity 0.2s;
-    }
-    .visually-hidden {
-      display: none;
-    }
-    .footprint {
-      fill: #00ffff;
-      opacity: 0.12;
-      stroke: #00ffff;
-      stroke-opacity: 0.5;
-      stroke-width: 1;
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-    }
-    .footprint:hover {
-      opacity: 0.25;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/starrech-services.css" />
 </head>
 <body>
 
@@ -43,7 +16,7 @@
   <div id="header-placeholder"></div>
 
   <!-- Hero Section -->
-  <div class="hero-section service-hero" style="background-image: url('../images/communication-infrastructure.jpg');">
+  <div class="hero-section service-hero" style="background-image: url('..assets/images/communication-infrastructure.png');">
     <div class="hero-overlay"></div>
     <div class="hero-text text-center">
       <h1>Communication Infrastructure</h1>
@@ -67,28 +40,58 @@
         </ul>
       </div>
       <div class="col-md-6">
-         <div class="coverage-map-container">
+        <!-- SVG Map -->
+        <div class="coverage-map-container">
         <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="800" height="400" fill="#0a0f2c"/>
-          <g onmouseover="showRegionInfo('Arctic')" onmouseout="hideRegionInfo()" aria-hidden="true">
-            <ellipse class="footprint" cx="400" cy="60" rx="100" ry="40" />
-          </g>
-          <g onmouseover="showRegionInfo('Pacific')" onmouseout="hideRegionInfo()" aria-hidden="true">
-            <ellipse class="footprint" cx="200" cy="200" rx="130" ry="50" />
-          </g>
-          <g onmouseover="showRegionInfo('Africa')" onmouseout="hideRegionInfo()" aria-hidden="true">
-            <ellipse class="footprint" cx="480" cy="220" rx="100" ry="45" />
-          </g>
-          <g onmouseover="showRegionInfo('Australia')" onmouseout="hideRegionInfo()" aria-hidden="true">
-            <ellipse class="footprint" cx="600" cy="320" rx="90" ry="35" />
-          </g>
+            <defs>
+            <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="5" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            </defs>
+
+            <!-- Simplified equirectangular landmass -->
+            <path class="land"
+            d="M20,190 L780,190 L780,210 L20,210 Z
+                M90,180 C100,175 110,170 120,175 C130,180 140,190 150,185 C160,180 170,175 180,180 C190,185 200,195 210,190
+                C220,185 230,180 240,185 C250,190 260,200 270,195 C280,190 290,185 300,190 C310,195 320,205 330,200
+                C340,195 350,190 360,195 C370,200 380,210 390,205 C400,200 410,195 420,200 C430,205 440,215 450,210
+                C460,205 470,200 480,205 C490,210 500,220 510,215 C520,210 530,205 540,210 C550,215 560,225 570,220
+                C580,215 590,210 600,215 C610,220 620,230 630,225 C640,220 650,215 660,220 C670,225 680,235 690,230
+                C700,225 710,220 720,225 C730,230 740,240 750,235" />
+
+            <!-- Orbits -->
+            <path class="orbit" d="M180 200 Q400 40 620 200"/>
+            <path class="orbit" d="M180 200 Q400 360 620 200"/>
+            <path class="orbit" d="M250 100 Q400 200 550 100"/>
+            <path class="orbit" d="M250 300 Q400 200 550 300"/>
+
+            <!-- Coverage zones -->
+            <g onmouseover="showRegionInfo('Arctic')" onmouseout="hideRegionInfo()" aria-hidden="true">
+            <ellipse class="footprint" cx="400" cy="60" rx="100" ry="40"/>
+            </g>
+            <g onmouseover="showRegionInfo('Pacific')" onmouseout="hideRegionInfo()" aria-hidden="true">
+            <ellipse class="footprint" cx="200" cy="200" rx="130" ry="50"/>
+            </g>
+            <g onmouseover="showRegionInfo('Africa')" onmouseout="hideRegionInfo()" aria-hidden="true">
+            <ellipse class="footprint" cx="480" cy="220" rx="100" ry="45"/>
+            </g>
+            <g onmouseover="showRegionInfo('Australia')" onmouseout="hideRegionInfo()" aria-hidden="true">
+            <ellipse class="footprint" cx="600" cy="320" rx="90" ry="35"/>
+            </g>
         </svg>
+        </div>
+
+
+
+        <img src="../assets/images/communication-infrastructure.svg" alt="StarReach Communication Infrastructure Graphic" class="img-fluid rounded shadow-sm">
+
       </div>
       </div>
     </div>
   </section>
 
-<!-- Tooltip Container -->
+<!-- Tooltip -->
 <div id="region-info" class="region-tooltip visually-hidden" aria-hidden="true"></div>
 
 <!-- Mission Impact -->
@@ -144,7 +147,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../main.js"></script>
+  <script src="../js/main.js"></script>
 <script>
   const tooltip = document.getElementById("region-info");
 
