@@ -1,7 +1,7 @@
 // main.js — GitHub Pages compatible, root-relative paths
 window.addEventListener('DOMContentLoaded', () => {
   // All assets are loaded using absolute paths from the repo root
-  const basePath = "components/";
+  const basePath = window.componentBasePath || "components/";
 
   // Load header
   fetch(`${basePath}header.html`)
