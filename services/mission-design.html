@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mission Architecture | StarReach Aerospace</title>
   <link rel="icon" href="../assets/images/StarReach.png" type="image/png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main-styles.css" />
+  <link rel="stylesheet" href="../css/starreach-services.css" />
   <style>
     body {
       background-color: #0a0e1a;
@@ -39,35 +40,29 @@
     }
     .node-box:hover {
       fill: rgba(0, 255, 255, 0.1);
+      animation: glowPulse 1.5s infinite ease-in-out;
     }
     @keyframes glowPulse {
-        0% {
-            stroke: #00ffff;
-            stroke-width: 2;
-            filter: drop-shadow(0 0 2px #00ffff);
-        }
-        50% {
-            stroke: #00ccff;
-            stroke-width: 3;
-            filter: drop-shadow(0 0 6px #00ccff);
-        }
-        100% {
-            stroke: #00ffff;
-            stroke-width: 2;
-            filter: drop-shadow(0 0 2px #00ffff);
-        }
-        }
-
-    .node-box:hover {
-        fill: rgba(0, 255, 255, 0.1);
-        animation: glowPulse 1.5s infinite ease-in-out;
-        }
+      0% {
+        stroke: #00ffff;
+        stroke-width: 2;
+        filter: drop-shadow(0 0 2px #00ffff);
+      }
+      50% {
+        stroke: #00ccff;
+        stroke-width: 3;
+        filter: drop-shadow(0 0 6px #00ccff);
+      }
+      100% {
+        stroke: #00ffff;
+        stroke-width: 2;
+        filter: drop-shadow(0 0 2px #00ffff);
+      }
+    }
     .svg-map g:hover text {
-        fill: #00ffff;
-        filter: drop-shadow(0 0 4px #00ffff);
-}
-
-
+      fill: #00ffff;
+      filter: drop-shadow(0 0 4px #00ffff);
+    }
   </style>
   <script>
     function showMission(id) {
@@ -79,68 +74,84 @@
 <body>
   <div id="header-placeholder"></div>
 
-  <div class="map-container">
-    <h2 class="text-center text-primary mb-4">Mission Design Map</h2>
-
-    <svg class="svg-map" viewBox="0 0 800 600" style="width: 100%; height: auto; background: #0a0e1a;">
-      <!-- Blueprint Grid Background -->
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#112244" stroke-width="1" />
-        </pattern>
-      </defs>
-      <rect width="800" height="600" fill="url(#grid)" />
-
-      <!-- Node 1 -->
-      <g onclick="showMission('info1')">
-        <rect x="100" y="100" width="220" height="60" class="node-box"></rect>
-        <text x="110" y="135" font-size="16">Orbital Earth Imaging</text>
-      </g>
-
-      <!-- Node 2 -->
-      <g onclick="showMission('info2')">
-        <rect x="480" y="100" width="220" height="60" class="node-box"></rect>
-        <text x="490" y="135" font-size="16">Lunar Supply Transport</text>
-      </g>
-
-      <!-- Node 3 -->
-      <g onclick="showMission('info3')">
-        <rect x="100" y="300" width="220" height="60" class="node-box"></rect>
-        <text x="110" y="335" font-size="16">Asteroid Survey Probe</text>
-      </g>
-
-      <!-- Node 4 -->
-      <g onclick="showMission('info4')">
-        <rect x="480" y="300" width="220" height="60" class="node-box"></rect>
-        <text x="490" y="335" font-size="16">Interplanetary Crew Habitat</text>
-      </g>
-
-      <!-- Connector Lines (optional, add more as needed) -->
-      <line x1="320" y1="130" x2="480" y2="130" stroke="#00ffff" stroke-width="1" />
-      <line x1="210" y1="160" x2="210" y2="300" stroke="#00ffff" stroke-width="1" />
-      <line x1="320" y1="330" x2="480" y2="330" stroke="#00ffff" stroke-width="1" />
-    </svg>
-
-    <!-- Hidden mission info boxes -->
-    <div id="info1" class="mission-info">
-      <strong>Orbital Earth Imaging</strong>: High-resolution multispectral systems designed for climate monitoring, urban analysis, and disaster detection. Optimized for sun-synchronous orbit.
-    </div>
-
-    <div id="info2" class="mission-info">
-      <strong>Lunar Supply Transport</strong>: Modular payload delivery system for precision landings. Features thermal shielding, descent thrusters, and payload bay optimized for lunar gravity and terrain.
-    </div>
-
-    <div id="info3" class="mission-info">
-      <strong>Asteroid Survey Probe</strong>: Deep-space radiation-hardened platform with low-thrust ion propulsion and robotic sampling arm. Used for mapping near-Earth objects.
-    </div>
-
-    <div id="info4" class="mission-info">
-      <strong>Interplanetary Crew Habitat</strong>: Closed-loop life support with modular shielding and spin-gravity docking systems. Designed for 24+ month missions to Mars and beyond.
+  <!-- Hero Section -->
+  <div class="hero-section service-hero" style="background-image: url('../assets/images/mission-design.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text text-center">
+      <h1>Mission Architecture</h1>
+      <p class="lead">Tailored planning for orbital, lunar, and deep space objectives.</p>
     </div>
   </div>
 
+  <!-- Mission Design Map Section -->
+  <section class="service-overview container py-5">
+    <div class="map-container">
+      <h2 class="text-center text-primary mb-4">Mission Design Map</h2>
+
+      <svg class="svg-map" viewBox="0 0 800 600" style="width: 100%; height: auto; background: #0a0e1a;">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#112244" stroke-width="1" />
+          </pattern>
+        </defs>
+        <rect width="800" height="600" fill="url(#grid)" />
+
+        <g onclick="showMission('info1')">
+          <rect x="100" y="100" width="220" height="60" class="node-box"></rect>
+          <text x="110" y="135" font-size="16">Orbital Earth Imaging</text>
+        </g>
+
+        <g onclick="showMission('info2')">
+          <rect x="480" y="100" width="220" height="60" class="node-box"></rect>
+          <text x="490" y="135" font-size="16">Lunar Supply Transport</text>
+        </g>
+
+        <g onclick="showMission('info3')">
+          <rect x="100" y="300" width="220" height="60" class="node-box"></rect>
+          <text x="110" y="335" font-size="16">Asteroid Survey Probe</text>
+        </g>
+
+        <g onclick="showMission('info4')">
+          <rect x="480" y="300" width="220" height="60" class="node-box"></rect>
+          <text x="490" y="335" font-size="16">Interplanetary Crew Habitat</text>
+        </g>
+
+        <line x1="320" y1="130" x2="480" y2="130" stroke="#00ffff" stroke-width="1" />
+        <line x1="210" y1="160" x2="210" y2="300" stroke="#00ffff" stroke-width="1" />
+        <line x1="320" y1="330" x2="480" y2="330" stroke="#00ffff" stroke-width="1" />
+      </svg>
+
+      <div id="info1" class="mission-info">
+        <strong>Orbital Earth Imaging</strong>: High-resolution multispectral systems designed for climate monitoring, urban analysis, and disaster detection. Optimized for sun-synchronous orbit.
+      </div>
+      <div id="info2" class="mission-info">
+        <strong>Lunar Supply Transport</strong>: Modular payload delivery system for precision landings. Features thermal shielding, descent thrusters, and payload bay optimized for lunar gravity and terrain.
+      </div>
+      <div id="info3" class="mission-info">
+        <strong>Asteroid Survey Probe</strong>: Deep-space radiation-hardened platform with low-thrust ion propulsion and robotic sampling arm. Used for mapping near-Earth objects.
+      </div>
+      <div id="info4" class="mission-info">
+        <strong>Interplanetary Crew Habitat</strong>: Closed-loop life support with modular shielding and spin-gravity docking systems. Designed for 24+ month missions to Mars and beyond.
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Quote -->
+  <section class="client-quotes py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">What Our Clients Say</h3>
+      <div class="p-4 bg-light border rounded mt-3 text-center">
+        <blockquote class="blockquote">
+          <p class="mb-3">"StarReach made our deep space concept a flight-ready reality."</p>
+          <footer class="blockquote-footer">Mission Director, NovaSphere</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
   <div id="footer-placeholder"></div>
   <div id="modal-container"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
