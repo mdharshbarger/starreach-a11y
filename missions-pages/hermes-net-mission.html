@@ -400,82 +400,62 @@
      Comparison Chart
     </h3>
     <div class="table-responsive">
-     <table class="table table-striped table-bordered mt-3">
-      <thead class="table-dark">
-       <tr>
-        <th>
-         Vehicle
-        </th>
-        <th>
-         Stages
-        </th>
-        <th>
-         Payload to LEO
-        </th>
-        <th>
-         Reusability
-        </th>
-        <th>
-         Turnaround Time
-        </th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>
-         SRV Boston
-        </td>
-        <td>
-         2
-        </td>
-        <td>
-         16,500 kg
-        </td>
-        <td>
-         Up to 10 flights
-        </td>
-        <td>
-         &lt; 7 days
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Falcon 9 (SpaceX)
-        </td>
-        <td>
-         2
-        </td>
-        <td>
-         22,800 kg
-        </td>
-        <td>
-         Up to 15 flights
-        </td>
-        <td>
-         ~10 days
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Vulcan Centaur (ULA)
-        </td>
-        <td>
-         2
-        </td>
-        <td>
-         27,200 kg
-        </td>
-        <td>
-         Expendable
-        </td>
-        <td>
-         N/A
-        </td>
-       </tr>
-      </tbody>
-     </table>
+      <table class="table table-striped table-bordered mt-3" style="background:#10182a;color:#00ffff;">
+        <thead class="table-dark">
+          <tr>
+            <th>Vehicle</th>
+            <th>Stages</th>
+            <th>Payload to LEO</th>
+            <th>Reusability</th>
+            <th>Turnaround Time</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">SRV Boston</td>
+            <td>2</td>
+            <td>16,500 kg</td>
+            <td>Up to 10 flights</td>
+            <td>&lt; 7 days</td>
+            <td style="background:#0a0e1a;color:#ffaa00;">Reusable, rapid turnaround</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background:#0a0e1a;color:#ff00cc;">Demo flight: 2025</td>
+            <td colspan="3" style="background:#0a0e1a;color:#b6eaff;">First commercial launch Q2 2026</td>
+          </tr>
+          <tr>
+            <td>Falcon 9 (SpaceX)</td>
+            <td>2</td>
+            <td>22,800 kg</td>
+            <td>Up to 15 flights</td>
+            <td>~10 days</td>
+            <td style="background:#0a0e1a;color:#ffaa00;">Industry standard</td>
+          </tr>
+          <tr>
+            <td>Vulcan Centaur (ULA)</td>
+            <td>2</td>
+            <td>27,200 kg</td>
+            <td>Expendable</td>
+            <td>N/A</td>
+            <td style="background:#0a0e1a;color:#ffaa00;">First flight 2024</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background:#222;color:#ff00cc;text-align:center;font-weight:bold;">
+              * All data subject to change. For details, contact StarReach.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
    </section>
+
+   <!-- - Inaccessibility notes table
+    No <caption> or summary for screen readers.
+    - No <th scope> or headers/id relationships for complex cells.
+    - Color-only cues for meaning (fails 1.4.1, 1.4.3).
+    - Merged cells (rowspan/colspan) with no ARIA or explanation.
+    - No keyboard navigation or focus cues. -->
    <section class="gallery container">
     <h3>
      Mission Gallery
