@@ -1,31 +1,35 @@
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Contact Mission Control</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background:linear-gradient(135deg,#10182a 70%,#0a0e1a 100%);border-radius:1.5rem;box-shadow:0 8px 32px #00ffff33;">
+      <div class="modal-header border-0" style="border-bottom:1px solid #00ffff33; display: flex; flex-direction: column; align-items: center;">
+        <h5 class="modal-title" id="contactModalLabel" style="color:#00ffff;font-weight:800;letter-spacing:0.07em;font-size:2.2rem;text-align:center;width:100%;margin-bottom:0.5rem;">Contact Mission Control</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter:invert(1);position:absolute;right:1.5rem;top:1.5rem;"></button>
       </div>
-
       <div class="modal-body">
-        <p>Need technical specs, partnership info, or just want to say hello? Reach out and a member of our ground team will be in touch shortly.</p>
-        <form class="contact-form">
+        <p style="color:#b6eaff;text-align:center;font-size:1.1rem;">Need technical specs, partnership info, or just want to say hello? Reach out and a member of our ground team will be in touch shortly.</p>
+        <form class="contact-form" autocomplete="off">
           <div class="mb-3">
-            <label for="modal-name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="modal-name" placeholder="Your name">
+            <!-- Removed label for accessibility violation -->
+            <input type="text" class="form-control" id="modal-name" placeholder="Your name" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:100%;font-size:1.2rem;max-width:600px;margin:auto;">
           </div>
           <div class="mb-3">
-            <label for="modal-email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="modal-email" placeholder="you@example.com">
+            <!-- Removed label for accessibility violation -->
+            <input type="email" class="form-control" id="modal-email" placeholder="you@example.com" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:100%;font-size:1.2rem;max-width:600px;margin:auto;">
           </div>
           <div class="mb-3">
-            <label for="modal-message" class="form-label">Message</label>
-            <textarea class="form-control" id="modal-message" rows="5" placeholder="Your message..."></textarea>
+            <!-- Removed label for accessibility violation -->
+            <textarea class="form-control" id="modal-message" rows="5" placeholder="Your message..." style="background:#181f2e;color:#00ffff;border:none;border-radius:1.5rem;padding:1rem 1.5rem;width:100%;font-size:1.2rem;max-width:600px;margin:auto;"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn" style="display:block;margin:auto;background:linear-gradient(90deg,#00ffff,#0a0e1a);color:#0a0e1a;font-weight:700;border:none;border-radius:2rem;padding:0.75rem 2.5rem;box-shadow:0 2px 16px #00ffff88;letter-spacing:0.05em;outline:none;">Send Message</button>
         </form>
       </div>
-
     </div>
   </div>
 </div>
+
+<!-- WCAG violations for teaching:
+- No <label> elements (violates 1.3.1, 3.3.2)
+- Relies only on placeholder text (violates 3.3.2, 1.3.1)
+- No visible focus indicator on button (violates 2.4.7)
+- No error messages or required field indicators (violates 3.3.1, 3.3.3)
+-->
