@@ -10,26 +10,86 @@
         <form class="contact-form" autocomplete="off">
           <div class="mb-3">
             <!-- Removed label for accessibility violation -->
-            <input type="text" class="form-control" id="modal-name" placeholder="Your name" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:100%;font-size:1.2rem;max-width:600px;margin:auto;">
+            <input type="text" id="modal-name" placeholder="Your name" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:90%;font-size:1.2rem;max-width:600px;margin:auto;outline:none;">
           </div>
           <div class="mb-3">
             <!-- Removed label for accessibility violation -->
-            <input type="email" class="form-control" id="modal-email" placeholder="you@example.com" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:100%;font-size:1.2rem;max-width:600px;margin:auto;">
+            <input type="email" id="modal-email" placeholder="you@example.com" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:90%;font-size:1.2rem;max-width:600px;margin:auto;outline:none;">
           </div>
           <div class="mb-3">
             <!-- Removed label for accessibility violation -->
-            <textarea class="form-control" id="modal-message" rows="5" placeholder="Your message..." style="background:#181f2e;color:#00ffff;border:none;border-radius:1.5rem;padding:1rem 1.5rem;width:100%;font-size:1.2rem;max-width:600px;margin:auto;"></textarea>
+            <select id="modal-topic" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;width:90%;font-size:1.2rem;max-width:600px;margin:auto;outline:none;">
+              <option selected disabled>Choose a topic</option>
+              <option>Mission Proposal</option>
+              <option>Technical Support</option>
+              <option>Media Inquiry</option>
+              <option>Other</option>
+            </select>
           </div>
-          <button type="submit" class="btn" style="display:block;margin:auto;background:linear-gradient(90deg,#00ffff,#0a0e1a);color:#0a0e1a;font-weight:700;border:none;border-radius:2rem;padding:0.75rem 2.5rem;box-shadow:0 2px 16px #00ffff88;letter-spacing:0.05em;outline:none;">Send Message</button>
+          <div class="mb-3">
+            <!-- No label, no grouping, no ARIA, no keyboard cues -->
+            <div style="display:flex;gap:1.5rem;align-items:center;justify-content:center;">
+              <span style="color:#00ffff;">Preferred Contact:</span>
+              <input type="radio" name="contact-method" id="contact-email" value="email" style="accent-color:#00ffff;">
+              <span style="color:#b6eaff;">Email</span>
+              <input type="radio" name="contact-method" id="contact-phone" value="phone" style="accent-color:#00ffff;">
+              <span style="color:#b6eaff;">Phone</span>
+              <input type="radio" name="contact-method" id="contact-fax" value="fax" style="accent-color:#00ffff;">
+              <span style="color:#b6eaff;">Fax</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <!-- Removed label for accessibility violation -->
+            <textarea id="modal-message" rows="5" placeholder="Your message..." style="background:#181f2e;color:#00ffff;border:none;border-radius:1.5rem;padding:1rem 1.5rem;width:90%;font-size:1.2rem;max-width:600px;margin:auto;outline:none;"></textarea>
+          </div>
+          <div class="mb-3" style="display:flex;align-items:center;gap:0.7rem;">
+            <!-- No label for accessibility violation -->
+            <input type="checkbox" id="modal-nda" style="accent-color:#00ffff;">
+            <span style="color:#b6eaff;">I require NDA information</span>
+            <input type="checkbox" id="modal-updates" style="accent-color:#00ffff;">
+            <span style="color:#b6eaff;">Subscribe to updates</span>
+          </div>
+          <div class="mb-3">
+            <!-- Custom dropdown, no label, no ARIA, mouse only -->
+            <div style="position:relative;width:90%;max-width:600px;margin:auto;">
+              <div id="customDropdown" style="background:#181f2e;color:#00ffff;border:none;border-radius:2rem;padding:1rem 1.5rem;cursor:pointer;user-select:none;">
+                Select your mission type
+              </div>
+              <ul id="dropdownOptions" style="display:none;position:absolute;top:110%;left:0;width:100%;background:#181f2e;border-radius:1rem;box-shadow:0 2px 16px #00ffff44;list-style:none;padding:0;margin:0;z-index:10;">
+                <li style="padding:1rem 1.5rem;cursor:pointer;">Satellite Deployment</li>
+                <li style="padding:1rem 1.5rem;cursor:pointer;">Cargo Resupply</li>
+                <li style="padding:1rem 1.5rem;cursor:pointer;">Crewed Mission</li>
+                <li style="padding:1rem 1.5rem;cursor:pointer;">Deep Space Probe</li>
+              </ul>
+            </div>
+          </div>
+          <button type="submit" style="display:block;margin:auto;background:linear-gradient(90deg,#00ffff,#0a0e1a);color:#0a0e1a;font-weight:700;border:none;border-radius:2rem;padding:0.75rem 2.5rem;box-shadow:0 2px 16px #00ffff88;letter-spacing:0.05em;outline:none;">Send Message</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-<!-- WCAG violations for teaching:
-- No <label> elements (violates 1.3.1, 3.3.2)
+<script>
+// Inaccessible custom dropdown: mouse only, no ARIA, no keyboard
+document.getElementById('customDropdown').addEventListener('click', function() {
+  var opts = document.getElementById('dropdownOptions');
+  opts.style.display = opts.style.display === 'block' ? 'none' : 'block';
+});
+document.querySelectorAll('#dropdownOptions li').forEach(function(li) {
+  li.addEventListener('click', function() {
+    document.getElementById('customDropdown').textContent = this.textContent;
+    document.getElementById('dropdownOptions').style.display = 'none';
+  });
+});
+</script>
+<!--
+WCAG violations for teaching:
+- No <label> elements for most fields (violates 1.3.1, 3.3.2)
 - Relies only on placeholder text (violates 3.3.2, 1.3.1)
-- No visible focus indicator on button (violates 2.4.7)
+- No fieldset/legend for radio group (violates 1.3.1)
+- No visible focus indicator on button or controls (violates 2.4.7)
 - No error messages or required field indicators (violates 3.3.1, 3.3.3)
+- No label for checkboxes (violates 1.3.1)
+- Custom dropdown is mouse only, not keyboard accessible, no ARIA (violates 2.1.1, 4.1.2)
+- No instructions or validation feedback
 -->

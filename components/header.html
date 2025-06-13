@@ -1,17 +1,23 @@
-<header>
-  <div class="top-header">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <img src="../assets/images/starreach.png" alt="StarReach Aerospace Logo">
-        <span>StarReach Aerospace</span>
+<header style="background:linear-gradient(90deg,#0a0e1a 60%,#003344 100%);box-shadow:0 4px 24px #00ffff33;">
+  <div class="top-header" style="padding:1.5rem 0;">
+    <div class="container d-flex align-items-center justify-content-between" style="gap:2rem;">
+      <a href="index.html" class="navbar-brand" style="display:flex;align-items:center;gap:1rem;text-decoration:none;">
+        <img src="../assets/images/starreach.png" alt="" style="height:48px;width:48px;border-radius:1rem;box-shadow:0 2px 12px #00ffff44;">
+        <span style="color:#666;font-size:.5rem;font-weight:800;letter-spacing:0.08em;text-shadow:0 2px 12px #00ffff44;">StarReach Aerospace</span>
       </a>
-      <nav role="menubar" class="d-flex">
-        <a role="menuitem" href="../index.html" tabindex="0">Home</a>
-        <a role="menuitem" href="../about.html" tabindex="0">About</a>
-        <a role="menuitem" href="../starreach-services.html" tabindex="0">Services</a>
-        <a role="menuitem" href="../missions.html" tabindex="0">Missions</a>
-        <a role="menuitem" href="#" data-bs-toggle="modal" data-bs-target="#contactModal" tabindex="0">Contact</a>
+      <nav class="d-flex" style="gap:2.5rem;">
+        <a href="../index.html" style="color:#00ffff;font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;outline:none;">Home</a>
+        <a href="../about.html" style="color:#00ffff;font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;outline:none;">About</a>
+        <a href="../starreach-services.html" style="color:#00ffff;font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;outline:none;">Services</a>
+        <a href="../missions.html" style="color:#00ffff;font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;outline:none;">Missions</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" style="color:#00ffff;font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;outline:none;">Contact</a>
       </nav>
     </div>
   </div>
 </header>
+<!-- 
+Removed all role and tabindex attributes (no keyboard navigation or landmarks).
+Removed all ARIA attributes.
+Removed alt text from logo image (empty alt="").
+No skip links, no focus indicators (outline:none), no semantic navigation.
+All navigation is mouse-dependent and not accessible for screen readers or keyboard users. -->
