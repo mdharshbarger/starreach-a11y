@@ -16,7 +16,7 @@
   <script>window.componentBasePath = "../components/";</script>
   <script src="../js/main.js" defer></script>
  </head>
- <body>
+ <body  style="background-color: black;">
     <div id="header-placeholder">
   </div>
   <main>
@@ -86,8 +86,94 @@
     </h3>
     <img alt="Image" class="img-fluid" src="../assets/images/chiron-concept.jpg" style="max-height: 1000px;"/>
    </section>
+
+   <section class="inaccessible-interactive container my-5">
+    <h4 style="color:#00ffff;font-weight:700; text-align: center;">Chiron Probe Interactive Timeline</h4>
+    <!-- Custom slider: no ARIA, no keyboard, no label, mouse only -->
+    <div id="timeline-slider" style="width:100%;max-width:600px;margin:2rem auto 1rem auto;position:relative;">
+      <div style="height:6px;background:#222;border-radius:3px;position:relative;">
+        <div id="slider-thumb" style="position:absolute;left:10%;top:-7px;width:28px;height:28px;background:#00ffff;border-radius:50%;box-shadow:0 2px 12px #00ffff44;cursor:pointer;transition:box-shadow 0.2s;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;color:#b6eaff;font-size:1rem;margin-top:0.5rem;">
+        <span>2037</span>
+        <span>2042</span>
+      </div>
+      <div id="timeline-event" style="margin-top:1.5rem;color:#ffaa00;text-align:center;font-size:1.2rem;">
+        Concept Design Announced
+      </div>
+    </div>
+    <!-- Custom tab switcher: no roles, no keyboard, no focus, color only -->
+    <div style="margin-top:3rem;">
+      <div id="customTabs" style="display:flex;gap:2rem;justify-content:center;">
+        <div class="tab-btn" style="padding:0.7rem 2rem;background:#181f2e;color:#00ffff;border-radius:2rem;cursor:pointer;font-weight:700;">Mission</div>
+        <div class="tab-btn" style="padding:0.7rem 2rem;background:#222;color:#b6eaff;border-radius:2rem;cursor:pointer;font-weight:700;">Science</div>
+        <div class="tab-btn" style="padding:0.7rem 2rem;background:#222;color:#b6eaff;border-radius:2rem;cursor:pointer;font-weight:700;">Team</div>
+      </div>
+      <div id="tabContent" style="margin-top:2rem;color:#b6eaff;text-align:center;">
+        <p>The Chiron Probe will push the boundaries of deep space exploration.</p>
+      </div>
+    </div>
+  </section>
 </main>
   <div id="modal-container"></div>  
   <div id="footer-placeholder"></div>
+
+  <script>
+    // Inaccessible slider: mouse only, no ARIA, no label, no keyboard
+    const slider = document.getElementById('timeline-slider');
+    const thumb = document.getElementById('slider-thumb');
+    const eventText = document.getElementById('timeline-event');
+    let dragging = false;
+    const events = [
+      "Concept Design Announced",
+      "Prototype Instruments Selected",
+      "Trajectory Calculations Begin",
+      "Final Mission Review",
+      "Launch Window Opens"
+    ];
+    slider.addEventListener('mousedown', function(e) {
+      if (e.target === thumb) dragging = true;
+    });
+    document.addEventListener('mousemove', function(e) {
+      if (!dragging) return;
+      const rect = slider.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      x = Math.max(0, Math.min(x, rect.width - 28));
+      thumb.style.left = x + 'px';
+      // Frustrating: event changes only at exact 0%, 25%, 50%, 75%, 100%
+      const idx = Math.round((x / (rect.width - 28)) * 4);
+      eventText.textContent = events[idx];
+    });
+    document.addEventListener('mouseup', function() {
+      dragging = false;
+    });
+    
+    // Inaccessible tabs: mouse only, no ARIA, no keyboard, no focus
+    const tabs = document.querySelectorAll('#customTabs .tab-btn');
+    const tabContent = document.getElementById('tabContent');
+    const tabTexts = [
+      "The Chiron Probe will push the boundaries of deep space exploration.",
+      "Science goals: Kuiper Belt mapping, dust analysis, and exoplanet search.",
+      "Team: StarReach Advanced Concepts, Deep Space Science Group."
+    ];
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', function() {
+        tabs.forEach(t => {
+          t.style.background = '#222';
+          t.style.color = '#b6eaff';
+        });
+        tab.style.background = '#181f2e';
+        tab.style.color = '#00ffff';
+        tabContent.innerHTML = `<p>${tabTexts[i]}</p>`;
+      });
+    });
+    </script>
+    <!--
+    Inaccessibility/frustration notes:
+    - Slider is mouse-only, no keyboard, no ARIA, no label, no value display.
+    - Slider event only changes at exact 5 points, hard to use.
+    - Tabs are mouse-only, no keyboard, no ARIA, no focus, color only for active.
+    - No instructions, no feedback for screen readers, no skip or focus management.
+    -->
 </body>
 </html>
