@@ -46,6 +46,22 @@
       fill: rgba(0, 255, 255, 0.1);
       animation: glowPulse 1.5s infinite ease-in-out;
     }
+    .mission-info-tooltip {
+  background: #111730;
+  color: #00ffff;
+  border-left: 5px solid #00ffff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  z-index: 1000;
+  pointer-events: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 24px rgba(0,255,255,0.08);
+  transition: opacity 0.15s;
+  opacity: 0.97;
+  position: absolute;
+}
     @keyframes glowPulse {
       0% {
         stroke: #00ffff;
@@ -87,7 +103,7 @@
     </div>
   </div>
 
-  <!-- Mission Design Map Section -->
+  <!-- Mission Design Map Section
   <section class="service-overview container py-5">
     <div class="map-container">
       <h2 class="text-center text-primary mb-4">Mission Design Map</h2>
@@ -138,8 +154,60 @@
         <strong>Interplanetary Crew Habitat</strong>: Closed-loop life support with modular shielding and spin-gravity docking systems. Designed for 24+ month missions to Mars and beyond.
       </div>
     </div>
-  </section>
+  </section> -->
 
+  <section class="service-overview container py-5">
+    <div class="map-container">
+      <h2 class="text-center text-primary mb-4">Mission Design Map</h2>
+  
+      <svg class="svg-map" viewBox="0 0 800 600" style="width: 100%; height: auto; background: #0a0e1a;">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#112244" stroke-width="1" />
+          </pattern>
+        </defs>
+        <rect width="800" height="600" fill="url(#grid)" />
+  
+        <g class="map-node" data-info="info1" tabindex="0" role="button" aria-label="Orbital Earth Imaging">
+          <rect x="100" y="100" width="220" height="60" class="node-box"></rect>
+          <text x="110" y="135" font-size="16">Orbital Earth Imaging</text>
+        </g>
+  
+        <g class="map-node" data-info="info2" tabindex="0" role="button" aria-label="Lunar Supply Transport">
+          <rect x="480" y="100" width="220" height="60" class="node-box"></rect>
+          <text x="490" y="135" font-size="16">Lunar Supply Transport</text>
+        </g>
+  
+        <g class="map-node" data-info="info3" tabindex="0" role="button" aria-label="Asteroid Survey Probe">
+          <rect x="100" y="300" width="220" height="60" class="node-box"></rect>
+          <text x="110" y="335" font-size="16">Asteroid Survey Probe</text>
+        </g>
+  
+        <g class="map-node" data-info="info4" tabindex="0" role="button" aria-label="Interplanetary Crew Habitat">
+          <rect x="480" y="300" width="220" height="60" class="node-box"></rect>
+          <text x="490" y="335" font-size="16">Interplanetary Crew Habitat</text>
+        </g>
+  
+        <line x1="320" y1="130" x2="480" y2="130" stroke="#00ffff" stroke-width="1" />
+        <line x1="210" y1="160" x2="210" y2="300" stroke="#00ffff" stroke-width="1" />
+        <line x1="320" y1="330" x2="480" y2="330" stroke="#00ffff" stroke-width="1" />
+      </svg>
+  
+      <!-- Tooltip containers -->
+      <div id="info1" class="mission-info-tooltip" style="display:none; position:absolute;">
+        <strong>Orbital Earth Imaging</strong>: High-resolution multispectral systems designed for climate monitoring, urban analysis, and disaster detection. Optimized for sun-synchronous orbit.
+      </div>
+      <div id="info2" class="mission-info-tooltip" style="display:none; position:absolute;">
+        <strong>Lunar Supply Transport</strong>: Modular payload delivery system for precision landings. Features thermal shielding, descent thrusters, and payload bay optimized for lunar gravity and terrain.
+      </div>
+      <div id="info3" class="mission-info-tooltip" style="display:none; position:absolute;">
+        <strong>Asteroid Survey Probe</strong>: Deep-space radiation-hardened platform with low-thrust ion propulsion and robotic sampling arm. Used for mapping near-Earth objects.
+      </div>
+      <div id="info4" class="mission-info-tooltip" style="display:none; position:absolute;">
+        <strong>Interplanetary Crew Habitat</strong>: Closed-loop life support with modular shielding and spin-gravity docking systems. Designed for 24+ month missions to Mars and beyond.
+      </div>
+    </div>
+  </section>
   <!-- Client Quote -->
   <section class="client-quotes py-5">
     <div class="container">
@@ -157,5 +225,46 @@
   <div id="modal-container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+ document.querySelectorAll('.map-node').forEach(node => {
+  node.addEventListener('mouseenter', function (e) {
+    const infoId = this.getAttribute('data-info');
+    const tooltip = document.getElementById(infoId);
+    if (tooltip) {
+      // Get bounding rect of SVG and node
+      const svg = this.ownerSVGElement;
+      const rect = this.querySelector('rect').getBoundingClientRect();
+      const svgRect = svg.getBoundingClientRect();
+      // Position tooltip near the node
+      tooltip.style.display = 'block';
+      tooltip.style.left = (rect.left - svgRect.left + rect.width + 20) + 'px';
+      tooltip.style.top = (rect.top - svgRect.top) + 'px';
+    }
+  });
+  node.addEventListener('mouseleave', function () {
+    const infoId = this.getAttribute('data-info');
+    const tooltip = document.getElementById(infoId);
+    if (tooltip) tooltip.style.display = 'none';
+  });
+  node.addEventListener('focus', function (e) {
+    // Show tooltip on keyboard focus
+    const infoId = this.getAttribute('data-info');
+    const tooltip = document.getElementById(infoId);
+    if (tooltip) {
+      const svg = this.ownerSVGElement;
+      const rect = this.querySelector('rect').getBoundingClientRect();
+      const svgRect = svg.getBoundingClientRect();
+      tooltip.style.display = 'block';
+      tooltip.style.left = (rect.left - svgRect.left + rect.width + 20) + 'px';
+      tooltip.style.top = (rect.top - svgRect.top) + 'px';
+    }
+  });
+  node.addEventListener('blur', function () {
+    const infoId = this.getAttribute('data-info');
+    const tooltip = document.getElementById(infoId);
+    if (tooltip) tooltip.style.display = 'none';
+  });
+});
+</script>
 </body>
 </html>
