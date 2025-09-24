@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | StarReach Aerospace</title>
-  <link rel="icon" href="assets/images/starreach.png" type="image/png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="css/main-styles.css">
-  <link rel="stylesheet" href="css/founder.css">
+  <link rel="icon" href="assets/images/StarReach.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/founder.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/main.js" defer></script>
-</head>
-<body>
+  <style>
+    .portrait-frame {
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border: 4px solid #00ffff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #00ffff88;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin: 0 auto;
+    }
 
-  
+    .portrait-frame:hover {
+      transform: scale(1.05);
+    }
+
+    .leadership-caption {
+      color: #00ffff;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
   <div id="header-placeholder"></div>
 
-  <header class="hero" style="background-image: url('assets\images\concept-to-reality-hero.png');">
+  <header class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-text text-center">
-      <h1 class="display-4 fw-bold">About StarReach AeroSpace</h1>
-      <p class="lead">From Imagination to Ignition</p>
+      <h1>About StarReach Aerospace</h1>
+      <p>From Imagination to Ignition</p>
     </div>
   </header>
 
@@ -29,127 +52,140 @@
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <h2>Our Founder: RH Locke</h2>
-        <p>StarReach Aerospace was born from a single question: <em>What if the final frontier wasn’t final at all?</em></p>
-        <p>RH Locke didn’t come from legacy aerospace. He wasn’t backed by billionaires or national agencies. He didn't start with selling cars or books. He was a dreamer with a pen, a vision, and a firm belief that space exploration belongs to all of us.</p>
-        <p>In a converted workshop just outside Austin, Locke began sketching out ideas not just for ships, but for systems—reusable, modular, human-centric platforms for space logistics, science, and long-term habitation. His early designs became the backbone of what would one day become the <strong>Hermes Network</strong>, <strong>Odin’s Eye</strong>, and the crowning jewel of our program, <strong>Project Thor</strong>.</p>
-        <p>More than a founder, RH Locke is a storyteller. He reminds us that every mission we launch is a chapter in something larger. Something shared. Something human.</p>
+        <p>StarReach Aerospace was born from a single question: <em>What if the final frontier wasn’t final at all?</em>
+        </p>
+        <p>RH Locke didn’t come from legacy aerospace. He wasn’t backed by billionaires or national agencies. He didn't
+          start with selling cars or books. He was a dreamer with a pen, a vision, and a firm belief that space
+          exploration belongs to all of us.</p>
+        <p>In a converted workshop just outside Austin, Locke began sketching out ideas not just for ships, but for
+          systems—reusable, modular, human-centric platforms for space logistics, science, and long-term habitation. His
+          early designs became the backbone of what would one day become the <strong>Hermes Network</strong>,
+          <strong>Odin’s Eye</strong>, and the crowning jewel of our program, <strong>Project Thor</strong>.
+        </p>
+        <p>More than a founder, RH Locke is a storyteller. He reminds us that every mission we launch is a chapter in
+          something larger. Something shared. Something human.</p>
         <p class="fw-bold">StarReach exists because one person looked up—and decided not to wait for permission.</p>
       </div>
     </div>
   </section>
+
+  <section class="container my-5" id="leadership">
+    <h2 class="text-center mb-4" style="color:#00ffff;">Our Leadership</h2>
+    <div class="row justify-content-center text-center g-4">
+      <div class="col-6 col-md-3">
+        <div class="portrait-frame" style="background-image: url('assets/images/founder1.png');"
+          onclick="openBio('locke')"></div>
+        <p class="leadership-caption">RH Locke</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="portrait-frame"
+          style="background-image: url('assets/images/founder4.png'); background-position: top;"
+          onclick="openBio('elena')"></div>
+        <p class="leadership-caption">Elena Vos</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="portrait-frame"
+          style="background-image: url('assets/images/founder2.png'); background-position: top;"
+          onclick="openBio('mira')"></div>
+        <p class="leadership-caption">Dr. Mira Chen</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="portrait-frame" style="background-image: url('assets/images/founder3.png');"
+          onclick="openBio('aj')"></div>
+        <p class="leadership-caption">A.J. Patel</p>
+      </div>
+    </div>
+  </section>
+
   <section class="video-section py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="ratio ratio-16x9 video-wrapper">
-            <video controls poster="assets/images/starreach.jpg">
-              <source src="assets\video\starreach-story.mp4" type="video/mp4" />
+            <video controls poster="assets/images/StarReach.jpg">
+              <source src="assets/video/StarReach.mp4" type="video/mp4" />
               Your browser does not support the video tag.
-           </video>
+            </video>
           </div>
         </div>
       </div>
     </div>
-  </section> 
+  </section>
 
-  <section class="container my-5">
-    <h2 style="color:#00ffff;font-weight:700;">Our Values (Accordion)</h2>
-    <!-- Custom accordion: no ARIA, no keyboard, no focus, mouse only -->
-    <div id="valuesAccordion" style="max-width:700px;margin:auto;">
-      <div class="value-panel" style="border-bottom:1px solid #00ffff;cursor:pointer;padding:1rem 0;">
-        <div style="font-weight:700;color:#00ffff;">Innovation</div>
-        <div class="value-content" style="display:none;color:#b6eaff;margin-top:0.5rem;">
-          We challenge the status quo and invent new ways to reach the stars.
+  <div id="bioModal" class="modal" tabindex="-1"
+    style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,14,26,0.95);z-index:9999;overflow-y:auto;">
+    <div class="d-flex justify-content-center align-items-center" style="min-height:100%;">
+      <div class="modal-content p-5"
+        style="background:#181f2e;border-radius:2rem;max-width:800px;color:#00ffff;box-shadow:0 0 25px #00ffffaa;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="bioTitle" style="color:#00ffff;"></h5>
+          <button type="button" class="btn-close btn-close-white" onclick="closeBio()" aria-label="Close"></button>
         </div>
-      </div>
-      <div class="value-panel" style="border-bottom:1px solid #00ffff;cursor:pointer;padding:1rem 0;">
-        <div style="font-weight:700;color:#00ffff;">Collaboration</div>
-        <div class="value-content" style="display:none;color:#b6eaff;margin-top:0.5rem;">
-          We believe space is for everyone and work together to make it possible.
-        </div>
-      </div>
-      <div class="value-panel" style="border-bottom:1px solid #00ffff;cursor:pointer;padding:1rem 0;">
-        <div style="font-weight:700;color:#00ffff;">Resilience</div>
-        <div class="value-content" style="display:none;color:#b6eaff;margin-top:0.5rem;">
-          We learn from setbacks and keep moving forward, no matter what.
-        </div>
+        <div class="modal-body" id="bioContent" style="line-height:1.6;"></div>
       </div>
     </div>
-  </section>
-  
-  <section class="container my-5">
-    <h2 style="color:#00ffff;font-weight:700;">Meet the Team (Image Gallery)</h2>
-    <!-- Custom gallery: mouse only, no alt text, no keyboard, no ARIA, no focus -->
-    <div id="teamGallery" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
-      <div class="team-img" style="width:180px;height:180px;background:url('assets/images/founder1.jpg') center/cover;border-radius:50%;cursor:pointer;box-shadow:0 2px 12px #00ffff44;"></div>
-      <div class="team-img" style="width:180px;height:180px;background:url('assets/images/founder2.jpg') center/cover;border-radius:50%;cursor:pointer;box-shadow:0 2px 12px #00ffff44;"></div>
-      <div class="team-img" style="width:180px;height:180px;background:url('assets/images/founder3.jpg') center/cover;border-radius:50%;cursor:pointer;box-shadow:0 2px 12px #00ffff44;"></div>
-    </div>
-    <div id="teamModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(10,14,26,0.95);z-index:9999;align-items:center;justify-content:center;">
-      <div style="background:#181f2e;padding:2rem 3rem;border-radius:2rem;color:#00ffff;max-width:400px;text-align:center;">
-        <div id="teamModalText">Team member info here</div>
-        <button id="closeTeamModal" style="margin-top:1.5rem;background:#00ffff;color:#0a0e1a;border:none;border-radius:2rem;padding:0.5rem 2rem;font-weight:700;cursor:pointer;">Close</button>
-      </div>
-    </div>
-  </section>
-  
-  <section class="container my-5">
-    <h2 style="color:#00ffff;font-weight:700;">Quick Poll</h2>
-    <!-- Custom poll: no labels, no ARIA, no keyboard, no feedback -->
-    <div id="quickPoll" style="background:#181f2e;padding:2rem;border-radius:2rem;max-width:500px;margin:auto;">
-      <div style="color:#b6eaff;margin-bottom:1rem;">What excites you most about StarReach?</div>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <input type="radio" name="poll" id="poll1" style="accent-color:#00ffff;">
-          <span style="color:#00ffff;">Deep Space Missions</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <input type="radio" name="poll" id="poll2" style="accent-color:#00ffff;">
-          <span style="color:#00ffff;">Reusable Rockets</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <input type="radio" name="poll" id="poll3" style="accent-color:#00ffff;">
-          <span style="color:#00ffff;">Space Habitats</span>
-        </div>
-      </div>
-      <button id="submitPoll" style="margin-top:2rem;background:linear-gradient(90deg,#00ffff,#0a0e1a);color:#0a0e1a;font-weight:700;border:none;border-radius:2rem;padding:0.75rem 2.5rem;box-shadow:0 2px 16px #00ffff88;letter-spacing:0.05em;outline:none;">Submit</button>
-    </div>
-  </section>
+  </div>
+
   <div id="footer-placeholder"></div>
   <div id="modal-container"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Inaccessible accordion: mouse only, no ARIA, no keyboard, no focus
-    document.querySelectorAll('#valuesAccordion .value-panel').forEach(panel => {
-      panel.addEventListener('click', function() {
-        const content = this.querySelector('.value-content');
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-    
-    // Inaccessible gallery: mouse only, no alt, no keyboard, no ARIA, no focus
-    const teamImgs = document.querySelectorAll('.team-img');
-    const teamModal = document.getElementById('teamModal');
-    const teamModalText = document.getElementById('teamModalText');
-    const teamInfo = [
-      "RH Locke – Founder & CEO",
-      "Dr. Mira Chen – Chief Scientist",
-      "A.J. Patel – Flight Director"
-    ];
-    teamImgs.forEach((img, i) => {
-      img.addEventListener('click', function() {
-        teamModalText.textContent = teamInfo[i];
-        teamModal.style.display = 'flex';
-      });
-    });
-    document.getElementById('closeTeamModal').addEventListener('click', function() {
-      teamModal.style.display = 'none';
-    });
-    
-    // Inaccessible poll: no labels, no ARIA, no keyboard, no feedback
-    document.getElementById('submitPoll').addEventListener('click', function() {
-      document.getElementById('quickPoll').innerHTML = "<div style='color:#ffaa00;font-size:1.2rem;text-align:center;'>Thanks for voting!</div>";
-    });
-    </script>
+    function openBio(who) {
+      const modal = document.getElementById('bioModal');
+      const title = document.getElementById('bioTitle');
+      const content = document.getElementById('bioContent');
+
+      if (who === 'locke') {
+        title.textContent = "RH Locke – Founder & CEO";
+        content.innerHTML = `
+          <p>StarReach Aerospace was born from a single question: <em>What if the final frontier wasn’t final at all?</em></p>
+          <p>RH Locke didn’t come from legacy aerospace. He wasn’t backed by billionaires or national agencies. He didn't start with selling cars or books. He was a dreamer with a pen, a vision, and a firm belief that space exploration belongs to all of us.</p>
+          <p>In a converted workshop just outside Austin, Locke began sketching out ideas not just for ships, but for systems—reusable, modular, human-centric platforms for space logistics, science, and long-term habitation. His early designs became the backbone of what would one day become the <strong>Hermes Network</strong>, <strong>Odin’s Eye</strong>, and the crowning jewel of our program, <strong>Project Thor</strong>.</p>
+          <p>More than a founder, RH Locke is a storyteller. He reminds us that every mission we launch is a chapter in something larger. Something shared. Something human.</p>
+          <p class="fw-bold">StarReach exists because one person looked up—and decided not to wait for permission.</p>`;
+      }
+      else if (who === 'elena') {
+        title.textContent = "Elena Vos – Chief Financial Officer";
+        content.innerHTML = `
+          <p>Elena Vos doesn’t just manage budgets—she fuels ambition with precision.</p>
+          <p>With a dual background in aerospace procurement and venture capital, Elena ensures every StarReach initiative is financially grounded without limiting innovation. She sees cost curves as flight paths—and knows when to bend them.</p>
+          <p>Before joining StarReach, Elena scaled two space-adjacent startups through IPO. She brings sharp analytical vision, relentless transparency, and a quiet love for lunar accounting models.</p>
+          <p>Her motto: <em>“It’s not what you can afford. It’s what you can sustain in orbit.”</em></p>`;
+      }
+      else if (who === 'mira') {
+        title.textContent = "Dr. Mira Chen – Chief Engineer";
+        content.innerHTML = `
+          <p>Dr. Mira Chen doesn’t just build spacecraft—she engineers the future.</p>
+          <p>With a background spanning materials science, orbital systems design, and human-centric mission architecture, Dr. Chen leads StarReach’s most ambitious engineering efforts. From the modular thorium shielding on our Project Thor lunar containers to the precision synchronization of the Hermes comms mesh, her fingerprints are on every launch, every lander, every leap forward.</p>
+          <p>Raised in Hong Kong and educated at Caltech, Mira is as comfortable in a clean room as she is sketching concepts on a diner napkin. She believes every mission should start with a question, not a specification sheet. Her motto: <em>“If we’re only building what’s possible, we’re not building enough.”</em></p>
+          <p>At StarReach, Dr. Chen is more than our Chief Engineer. She’s our quiet compass—the one who reminds us that every wire, weld, and waveform carries a piece of the human spirit.</p>`;
+      }
+      else if (who === 'aj') {
+        title.textContent = "A.J. Patel – Flight Director";
+        content.innerHTML = `
+          <p><strong>Title:</strong> Flight Director, StarReach Aerospace<br>
+          <strong>Specialization:</strong> Mission Operations & Systems Coordination</p>
+          <p>An unshakable presence in the control room, A.J. Patel orchestrates every launch, maneuver, and orbital correction with the precision of a symphony conductor. Before joining StarReach, A.J. served as a mission planner for a major national space agency, where they gained a reputation for remaining calm under pressure and solving problems mid-burn.</p>
+          <p><strong>Personality:</strong> Pragmatic and focused, A.J. thrives in high-stakes environments. With a deep respect for engineering limits—and an instinct for when to push them—Patel is the bridge between spacecraft, crew, and ground operations. They believe that perfect missions are built from imperfect rehearsals.</p>
+          <p><strong>Signature Quote:</strong> <em>“You don’t chase perfection in space. You plan for chaos—and fly through it with grace.”</em></p>
+          <p><strong>Key Contributions:</strong></p>
+          <ul>
+            <li>Led the inaugural Hermes Net orbital deployment sequence</li>
+            <li>Managed real-time systems recovery after a sensor failure on the Chiron Probe</li>
+            <li>Developed cross-training simulation modules for control room personnel, integrating VR to simulate lunar descent contingencies</li>
+          </ul>
+          <p><strong>Reputation:</strong> Among the flight teams, A.J. is known as “The Anchor”—a figure of calm in moments when seconds matter most.</p>`;
+      }
+
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBio() {
+      document.getElementById('bioModal').style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  </script>
 </body>
+
 </html>
