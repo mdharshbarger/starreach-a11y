@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarReach Aerospace | Where innovation meets the stars.</title>
+
+  <link rel="icon" href="assets/images/starreach.png" type="image/png" />
+
+  <link rel="stylesheet" href="css/main-styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    /* ---------- Accessibility overrides for index-a11y.html ---------- */
+
+    /* Reset any "outline: none" left over from the original styles */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid #ffcc00 !important;
+      outline-offset: 3px !important;
+      box-shadow: 0 0 0 4px #0a0e1a, 0 0 0 7px #ffcc00 !important;
+      border-radius: 4px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -200px;
+      left: 0;
+      background: #ffcc00;
+      color: #0a0e1a;
+      padding: 0.75rem 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      z-index: 9999;
+      border-radius: 0 0 0.5rem 0;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* ----- Header brand & nav contrast and focus ----- */
+    /* Original .navbar-brand > span used #666 at .5rem (~8px) on dark - 3.53:1. Fix both color and size. */
+    .a11y-header {
+      background: linear-gradient(90deg, #0a0e1a 60%, #003344 100%);
+      box-shadow: 0 4px 24px #00ffff33;
+    }
+    .a11y-header .top-header {
+      padding: 1.5rem 0;
+      background: transparent;
+    }
+    .a11y-header .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: #ffffff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+    .a11y-header .navbar-brand .brand-text {
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 12px #00ffff44;
+    }
+    .a11y-header .navbar-brand:hover .brand-text,
+    .a11y-header .navbar-brand:focus .brand-text {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .a11y-header .navbar-brand img {
+      height: 48px;
+      width: 48px;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px #00ffff44;
+    }
+
+    /* Primary nav as semantic list */
+    .a11y-primary-nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      padding: 0;
+      margin: 0;
+    }
+    .a11y-primary-nav a {
+      color: #b6ffff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 0.25rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .a11y-primary-nav a:hover,
+    .a11y-primary-nav a:focus {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .a11y-primary-nav a[aria-current="page"] {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Allow header to reflow at small viewport widths so no horizontal scroll at 320px */
+    .a11y-header .container {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .a11y-primary-nav ul {
+        gap: 0.5rem 1.25rem;
+      }
+    }
+
+    /* ----- Hero ----- */
+    /* Original .hero-image used filter: brightness(30%) and position: absolute. Keep look but make a11y-friendly. */
+    .a11y-hero {
+      position: relative;
+      min-height: 50vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      padding: 3rem 1rem;
+    }
+    .a11y-hero .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(30%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .a11y-hero h1 {
+      position: relative;
+      z-index: 2;
+      color: #ffffff !important;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+      font-size: clamp(2rem, 6vw, 5rem);
+      font-weight: 800;
+      text-align: center;
+      padding: 1rem;
+      max-width: 95%;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    /* ----- Mission cards: real anchors instead of clickable divs ----- */
+    .mission-list { list-style: none; padding: 0; }
+    a.mission-item {
+      display: block;
+      background-color: #415a77;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      min-width: 250px;
+      max-width: 300px;
+      text-align: center;
+      color: #ffffff;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    a.mission-item:hover,
+    a.mission-item:focus {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+    a.mission-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+    a.mission-item .mission-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      display: block;
+    }
+    a.mission-item .mission-subtitle {
+      font-size: 0.95rem;
+      color: #f0f0f0;
+      display: block;
+      margin-top: 0.25rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      a.mission-item { transition: none; }
+      a.mission-item:hover, a.mission-item:focus { transform: none; }
+    }
+
+    /* ----- Newsletter form ----- */
+    .a11y-newsletter {
+      background: #10182a;
+      padding: 2.5rem 0;
+    }
+    .a11y-newsletter .container { max-width: 600px; }
+    .a11y-newsletter h2 {
+      color: #00ffff !important;
+      font-weight: 700;
+    }
+    .a11y-newsletter p { color: #d2faff !important; }
+    .a11y-newsletter form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+    .a11y-newsletter .form-field {
+      flex: 1 1 240px;
+      min-width: 240px;
+    }
+    .a11y-newsletter label {
+      display: block;
+      color: #d2faff;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .a11y-newsletter input {
+      background: #f5fdff;
+      color: #0a1a1d;
+      border: 2px solid #00cccc;
+      border-radius: 2rem;
+      padding: 0.85rem 1.25rem;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+    /* Placeholder contrast: 4.5:1 minimum on the input bg */
+    .a11y-newsletter input::placeholder { color: #4a5a5e; opacity: 1; }
+    .a11y-newsletter input:invalid:not(:placeholder-shown) {
+      border-color: #ff5a5a;
+    }
+    .a11y-newsletter button {
+      background: #00ffff;
+      color: #0a0e1a;
+      font-weight: 700;
+      border: 2px solid #00ffff;
+      border-radius: 2rem;
+      padding: 0.75rem 2rem;
+      box-shadow: 0 2px 16px #00ffff88;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+    .a11y-newsletter button:hover { background: #b6ffff; border-color: #b6ffff; }
+    #newsletterMsg {
+      color: #ffdc7a;
+      margin-top: 1rem;
+      min-height: 1.25rem;
+      font-weight: 600;
+    }
+    #newsletterMsg.is-success { color: #b6ffb6; }
+    #newsletterMsg.is-error    { color: #ffb6b6; }
+
+    /* ----- FAQ as accessible disclosure buttons ----- */
+    .a11y-faq {
+      background: #181f2e;
+      padding: 2.5rem 0;
+    }
+    .a11y-faq .container { max-width: 700px; }
+    .a11y-faq h2 { color: #00ffff !important; font-weight: 700; }
+    .faq-list { list-style: none; padding: 0; margin: 0; }
+    .faq-item {
+      border-bottom: 1px solid #00ffff;
+      padding: 0;
+    }
+    .faq-item .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      text-align: left;
+      color: #00ffff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1rem 0.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-item .faq-question:hover,
+    .faq-item .faq-question:focus {
+      color: #ffffff;
+    }
+    .faq-item .faq-question::after {
+      content: "+";
+      font-size: 1.4rem;
+      line-height: 1;
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+    .faq-item .faq-question[aria-expanded="true"]::after {
+      content: "\2212"; /* minus sign */
+    }
+    .faq-item .faq-answer {
+      color: #d2faff;
+      padding: 0 0.5rem 1rem 0.5rem;
+    }
+    .faq-item .faq-answer[hidden] { display: none; }
+
+    /* ----- Crew section ----- */
+    .a11y-crew {
+      background: linear-gradient(to right, #001f33, #004466);
+      text-align: center;
+      padding: 4rem 1rem;
+      color: #ffffff;
+    }
+    .a11y-crew h2 {
+      color: #ffffff !important;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .a11y-crew img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .a11y-crew p {
+      color: #ffffff !important;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      line-height: 1.75;
+    }
+
+    /* ----- Mission Highlights ----- */
+    .a11y-missions {
+      background: linear-gradient(to right, #0d1b2a, #1b263b);
+      color: #ffffff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .a11y-missions h2 {
+      color: #ffffff !important;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+    .a11y-missions > p {
+      color: #ffffff !important;
+      max-width: 900px;
+      margin: 0 auto 1.5rem auto;
+    }
+    .a11y-missions .mission-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0 0 0;
+    }
+
+    /* ----- Timeline ----- */
+    .a11y-timeline {
+      padding: 4rem 2rem;
+      background: #0b0f1a;
+      color: #eee;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .a11y-timeline h2 {
+      color: #ffffff !important;
+      text-align: center;
+    }
+    .a11y-timeline .timeline-content h3 {
+      color: #ffffff !important;
+      margin: 0 0 0.5rem 0;
+    }
+    .a11y-timeline .timeline-content p { color: #f0f0f0 !important; }
+
+    /* ----- Footer ----- */
+    .a11y-footer {
+      background: linear-gradient(90deg, #0a0e1a 60%, #003344 100%);
+      padding: 2.5rem 0 0 0;
+      box-shadow: 0 -4px 24px #00ffff22;
+      color: #ffffff;
+    }
+    .a11y-footer .footer-links ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      padding: 0;
+      margin: 0 0 1rem 0;
+    }
+    .a11y-footer .footer-links a {
+      color: #b6ffff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+    .a11y-footer .footer-links a:hover,
+    .a11y-footer .footer-links a:focus {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .a11y-footer .social-icons ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      font-size: 1.7rem;
+    }
+    .a11y-footer .social-icons a {
+      color: #b6ffff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .a11y-footer .social-icons a:hover,
+    .a11y-footer .social-icons a:focus {
+      color: #ffffff;
+    }
+    .a11y-footer .address {
+      text-align: center;
+      color: #d2faff;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    /* Footer legal: original #666 on gradient. Lift to readable */
+    .a11y-footer .legal {
+      text-align: center;
+      color: #d2faff;
+      font-size: 0.95rem;
+      padding-bottom: 1.5rem;
+    }
+    .a11y-footer .disclaimer {
+      background-color: #000;
+      color: #d2d2d2;
+      font-size: 0.85rem;
+      padding: 2rem 1rem;
+      border-radius: 0 0 2rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .a11y-footer .disclaimer p { color: #d2d2d2 !important; margin: 0 0 1rem 0; }
+
+    /* ----- Contact modal (accessible labels, fieldset, dropdown) ----- */
+    .a11y-modal .modal-content {
+      background: linear-gradient(135deg, #10182a 70%, #0a0e1a 100%);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px #00ffff33;
+      color: #ffffff;
+    }
+    .a11y-modal .modal-title {
+      color: #00ffff;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+    .a11y-modal .modal-body p { color: #d2faff !important; }
+    .a11y-modal label {
+      color: #d2faff;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .a11y-modal input[type="text"],
+    .a11y-modal input[type="email"],
+    .a11y-modal select,
+    .a11y-modal textarea {
+      background: #f5fdff;
+      color: #0a1a1d;
+      border: 2px solid #00cccc;
+      border-radius: 1rem;
+      padding: 0.85rem 1.25rem;
+      width: 100%;
+      font-size: 1.05rem;
+    }
+    .a11y-modal input::placeholder,
+    .a11y-modal textarea::placeholder { color: #4a5a5e; opacity: 1; }
+    .a11y-modal fieldset {
+      border: 1px solid #00cccc;
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      margin: 0 0 1rem 0;
+    }
+    .a11y-modal fieldset legend {
+      color: #00ffff;
+      padding: 0 0.5rem;
+      font-weight: 600;
+    }
+    .a11y-modal .radio-group,
+    .a11y-modal .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      align-items: center;
+    }
+    .a11y-modal .radio-group label,
+    .a11y-modal .checkbox-group label {
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0;
+    }
+    .a11y-modal .modal-actions button {
+      display: block;
+      margin: 0 auto;
+      background: #00ffff;
+      color: #0a0e1a;
+      font-weight: 700;
+      border: 2px solid #00ffff;
+      border-radius: 2rem;
+      padding: 0.75rem 2.5rem;
+      cursor: pointer;
+    }
+    .a11y-modal .modal-actions button:hover { background: #b6ffff; border-color: #b6ffff; }
+    .a11y-modal .btn-close {
+      filter: invert(1);
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+
+    /* Accessible custom listbox dropdown */
+    .a11y-listbox-wrap { position: relative; }
+    .a11y-listbox-button {
+      width: 100%;
+      background: #f5fdff;
+      color: #0a1a1d;
+      border: 2px solid #00cccc;
+      border-radius: 1rem;
+      padding: 0.85rem 1.25rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .a11y-listbox-button::after {
+      content: "\25BE";
+      flex: 0 0 auto;
+    }
+    .a11y-listbox-list {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      width: 100%;
+      background: #f5fdff;
+      color: #0a1a1d;
+      border: 2px solid #00cccc;
+      border-radius: 1rem;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+      list-style: none;
+      padding: 0.25rem 0;
+      margin: 0;
+      z-index: 10;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    .a11y-listbox-list[hidden] { display: none; }
+    .a11y-listbox-list [role="option"] {
+      padding: 0.6rem 1.25rem;
+      cursor: pointer;
+    }
+    .a11y-listbox-list [role="option"][aria-selected="true"] {
+      background: #00ffff;
+      color: #0a0e1a;
+    }
+    .a11y-listbox-list [role="option"]:hover,
+    .a11y-listbox-list [role="option"].is-active {
+      background: #003344;
+      color: #ffffff;
+    }
+
+    /* Visually hidden helper (used for redundant cues so state isn't conveyed by color alone) */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Override original h2,p { color: white !important; } so we can color modal/newsletter text per context */
+    main h2, main p { color: inherit; }
+
+    /* Ensure no horizontal scroll at 320px */
+    html, body { overflow-x: hidden; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="a11y-header" role="banner">
+    <div class="top-header">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a href="index-a11y.html" class="navbar-brand" aria-label="StarReach Aerospace home">
+          <img src="assets/images/starreach.png" alt="" />
+          <span class="brand-text">StarReach Aerospace</span>
+        </a>
+        <nav class="a11y-primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index-a11y.html" aria-current="page">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="starreach-services.html">Services</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="a11y-hero" aria-labelledby="hero-heading">
+      <img src="assets/images/banner.jpg" alt="" role="presentation" class="hero-image" />
+      <h1 id="hero-heading">Welcome to StarReach Aerospace, where innovation meets the stars.</h1>
+    </section>
+
+    <section class="a11y-missions" aria-labelledby="missions-heading">
+      <h2 id="missions-heading">Mission Highlights</h2>
+      <p>From orbital satellites to Mars-bound cargo landers, StarReach Aerospace continues to redefine what's possible in aerospace technology.</p>
+
+      <ul class="mission-list" aria-label="Featured missions">
+        <li>
+          <a class="mission-item" href="missions-pages/hermes-net-mission.html">
+            <img src="assets/images/leo-comms.jpg" alt="" />
+            <h3 class="mission-title">Hermes Net</h3>
+            <span class="mission-subtitle">LEO Comms Array</span>
+          </a>
+        </li>
+        <li>
+          <a class="mission-item" href="missions-pages/odins-eye.html">
+            <img src="assets/images/orbital-telescope.jpg" alt="" />
+            <h3 class="mission-title">Odin's Eye</h3>
+            <span class="mission-subtitle">Orbital Telescope Platform</span>
+          </a>
+        </li>
+        <li>
+          <a class="mission-item" href="missions-pages/thor-moon.html">
+            <img src="assets/images/thor-moon.jpg" alt="" />
+            <h3 class="mission-title">Thor Moon Mission</h3>
+            <span class="mission-subtitle">Deep Space Lunar Descent</span>
+          </a>
+        </li>
+        <li>
+          <a class="mission-item" href="missions-pages/ares-hauler.html">
+            <img src="assets/images/mars-lander.jpg" alt="" />
+            <h3 class="mission-title">Ares Hauler</h3>
+            <span class="mission-subtitle">Mars Cargo Lander</span>
+          </a>
+        </li>
+        <li>
+          <a class="mission-item" href="missions-pages/chiron-probe.html">
+            <img src="assets/images/asteroid-surveyor.jpg" alt="" />
+            <h3 class="mission-title">Chiron Probe</h3>
+            <span class="mission-subtitle">Asteroid Surveyor</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="a11y-timeline timeline-section" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading" class="section-title text-center">Mission Timeline</h2>
+      <ol class="timeline" aria-label="Mission timeline milestones">
+        <li class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h3>Concept Finalization</h3>
+            <p>Thor, Odin, and Hermes missions reach Phase B, finalizing mission architecture.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-date">2026</div>
+          <div class="timeline-content">
+            <h3>Subsystem Testing</h3>
+            <p>Prototype engines and orbital comms hardware undergo testing for Hermes and Thor.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-date">2027</div>
+          <div class="timeline-content">
+            <h3>Assembly Begins</h3>
+            <p>Hermes satellites go into production. First-stage tanks fabricated for Thor mission.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-date">2028</div>
+          <div class="timeline-content">
+            <h3>System Integration</h3>
+            <p>Final stack integration for Thor. Odin's platform heads to L2 orbit.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-date">Q2 2029</div>
+          <div class="timeline-content">
+            <h3>Thor Mission Launch</h3>
+            <p>StarReach delivers 13-ton container to the Moon, beginning permanent base construction.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="a11y-crew crew-section" aria-labelledby="crew-heading">
+      <h2 id="crew-heading">Meet the Crew</h2>
+      <img src="assets/images/crew.jpg" alt="Group portrait of the StarReach Aerospace engineering, test pilot, and mission-analyst team standing in front of a launch hangar." />
+      <p>Our team includes engineers, test pilots, and mission analysts driven by one goal: pushing humanity further into the stars.</p>
+    </section>
+
+    <section class="a11y-newsletter newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <h2 id="newsletter-heading">Sign Up for Updates</h2>
+        <p>Sign up for our mission updates newsletter or follow us on social media to receive real-time updates, countdowns, and launch alerts.</p>
+
+        <form id="newsletterForm" novalidate aria-describedby="newsletterMsg">
+          <div class="form-field">
+            <label for="newsletterEmail">Email address</label>
+            <input
+              type="email"
+              id="newsletterEmail"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+              aria-required="true"
+              aria-describedby="newsletterEmailHelp newsletterMsg"
+              placeholder="you@example.com"
+            />
+            <span id="newsletterEmailHelp" class="visually-hidden">Required. We'll send launch and mission updates to this address.</span>
+          </div>
+          <div class="form-field" style="flex: 0 0 auto;">
+            <button type="submit" id="newsletterSubmit">Subscribe</button>
+          </div>
+        </form>
+        <div id="newsletterMsg" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="a11y-faq faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <h2 id="faq-heading">FAQ</h2>
+        <ul class="faq-list">
+          <li class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              <span>Are StarReach Aeronautics launches open to the public?</span>
+            </button>
+            <div id="faq-1" class="faq-answer" hidden>
+              Yes! You can request a launch pass by visiting the individual mission page for the launch you're interested in.
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              <span>Where are your launch sites?</span>
+            </button>
+            <div id="faq-2" class="faq-answer" hidden>
+              Our primary launch site is Cape Orion, FL. We also have facilities in the Arctic and at sea for specialized missions.
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              <span>How can I watch a launch if I can't attend in person?</span>
+            </button>
+            <div id="faq-3" class="faq-answer" hidden>
+              All major StarReach Aeronautics launches are livestreamed with commentary, mission updates, and multi-angle views. Visit the mission page or subscribe to our YouTube and social media channels for access.
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              <span>Can I tour your facilities?</span>
+            </button>
+            <div id="faq-4" class="faq-answer" hidden>
+              Public tours of Cape Orion are offered quarterly and must be scheduled in advance. Arctic and sea-based launch platforms are restricted for safety, security, and environmental reasons.
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              <span>Do you offer internships or educational programs?</span>
+            </button>
+            <div id="faq-5" class="faq-answer" hidden>
+              Yes! We have internship opportunities for college students and host educational outreach events throughout the year. Visit our Careers or Outreach page for current openings and program information.
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-6">
+              <span>What safety precautions are in place for launch viewing?</span>
+            </button>
+            <div id="faq-6" class="faq-answer" hidden>
+              Launch passes include safety instructions and designated viewing areas. We work closely with local authorities to ensure a safe and unforgettable experience for all attendees.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="a11y-footer" role="contentinfo">
+    <nav class="footer-links" aria-label="Footer">
+      <ul>
+        <li><a href="index-a11y.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="starreach-services.html">Services</a></li>
+        <li><a href="missions.html">Missions</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="social-icons">
+      <ul aria-label="Follow StarReach Aerospace on social media">
+        <li><a href="#" aria-label="StarReach Aerospace on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="StarReach Aerospace on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="StarReach Aerospace on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="StarReach Aerospace on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="StarReach Aerospace on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <div class="address">
+      StarReach Aerospace Headquarters<br />
+      100 Launchpad Drive, Cape Orion, FL 32920, USA
+    </div>
+    <div class="legal">
+      &copy; 2025 StarReach Aerospace. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </div>
+    <div class="container disclaimer">
+      <p>
+        This website was created as part of accessibility training and contains intentional accessibility errors for educational purposes. Any resemblance to real businesses, individuals, or entities&mdash;living or dead&mdash;is purely coincidental. All names, images, and mission content are fictitious or under the ownership of Deque Systems, Inc. ("Deque").
+      </p>
+      <p>
+        These course materials are considered confidential information of Deque. Nothing in these course materials is intended to grant any rights to the Client under any copyright, trade secret, or other intellectual property right of Deque. Deque specifically prohibits the use of these course materials in artificial intelligence or machine learning training.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Accessible contact modal -->
+  <div class="modal fade a11y-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0" style="position: relative; display: flex; flex-direction: column; align-items: center;">
+          <h2 class="modal-title" id="contactModalLabel">Contact Mission Control</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close contact form"></button>
+        </div>
+        <div class="modal-body">
+          <p>Need technical specs, partnership info, or just want to say hello? Reach out and a member of our ground team will be in touch shortly.</p>
+
+          <form class="contact-form" autocomplete="on" novalidate aria-describedby="contactFormStatus">
+            <p id="contactFormHint" style="color:#ffdc7a; margin-top:0;"><span aria-hidden="true">*</span> indicates a required field.</p>
+
+            <div class="mb-3">
+              <label for="modal-name">Your name <span aria-hidden="true" style="color:#ffdc7a;">*</span></label>
+              <input type="text" id="modal-name" name="name" autocomplete="name" required aria-required="true" placeholder="Jane Astronaut" />
+            </div>
+            <div class="mb-3">
+              <label for="modal-email">Email address <span aria-hidden="true" style="color:#ffdc7a;">*</span></label>
+              <input type="email" id="modal-email" name="email" autocomplete="email" required aria-required="true" placeholder="you@example.com" />
+            </div>
+            <div class="mb-3">
+              <label for="modal-topic">Topic</label>
+              <select id="modal-topic" name="topic" autocomplete="off">
+                <option value="" selected>Choose a topic</option>
+                <option value="proposal">Mission Proposal</option>
+                <option value="support">Technical Support</option>
+                <option value="media">Media Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <fieldset class="mb-3">
+              <legend>Preferred contact method</legend>
+              <div class="radio-group">
+                <label><input type="radio" name="contact-method" value="email" /> Email</label>
+                <label><input type="radio" name="contact-method" value="phone" /> Phone</label>
+                <label><input type="radio" name="contact-method" value="fax" /> Fax</label>
+              </div>
+            </fieldset>
+
+            <div class="mb-3">
+              <label for="modal-message">Your message <span aria-hidden="true" style="color:#ffdc7a;">*</span></label>
+              <textarea id="modal-message" name="message" rows="5" required aria-required="true" placeholder="Tell us how we can help..."></textarea>
+            </div>
+
+            <fieldset class="mb-3">
+              <legend>Options</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" id="modal-nda" name="nda" /> I require NDA information</label>
+                <label><input type="checkbox" id="modal-updates" name="updates" /> Subscribe to mission updates</label>
+              </div>
+            </fieldset>
+
+            <div class="mb-3">
+              <label id="missionTypeLabel" for="customDropdownButton">Mission type</label>
+              <div class="a11y-listbox-wrap">
+                <button type="button"
+                        id="customDropdownButton"
+                        class="a11y-listbox-button"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-labelledby="missionTypeLabel customDropdownButton">
+                  <span id="customDropdownValue">Select your mission type</span>
+                </button>
+                <ul id="dropdownOptions"
+                    class="a11y-listbox-list"
+                    role="listbox"
+                    aria-labelledby="missionTypeLabel"
+                    tabindex="-1"
+                    hidden>
+                  <li role="option" data-value="satellite" tabindex="-1">Satellite Deployment</li>
+                  <li role="option" data-value="cargo" tabindex="-1">Cargo Resupply</li>
+                  <li role="option" data-value="crewed" tabindex="-1">Crewed Mission</li>
+                  <li role="option" data-value="probe" tabindex="-1">Deep Space Probe</li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="contactFormStatus" role="status" aria-live="polite" style="color:#b6ffb6; min-height:1.25rem; margin-bottom:0.75rem;"></div>
+
+            <div class="modal-actions">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- FAQ disclosure ----------
+    document.querySelectorAll('.faq-item .faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        if (panel) {
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        }
+      });
+    });
+
+    // ---------- Newsletter form (with validation and accessible feedback) ----------
+    (function () {
+      var form  = document.getElementById('newsletterForm');
+      var input = document.getElementById('newsletterEmail');
+      var msg   = document.getElementById('newsletterMsg');
+      if (!form) return;
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function setStatus(text, kind) {
+        msg.textContent = text;
+        msg.classList.remove('is-success', 'is-error');
+        if (kind) msg.classList.add('is-' + kind);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var value = (input.value || '').trim();
+
+        if (!value) {
+          setStatus('Please enter your email address.', 'error');
+          input.setAttribute('aria-invalid', 'true');
+          input.focus();
+          return;
+        }
+        if (!emailRegex.test(value)) {
+          setStatus('That does not look like a valid email address. Please check the format (for example, you@example.com).', 'error');
+          input.setAttribute('aria-invalid', 'true');
+          input.focus();
+          return;
+        }
+        input.removeAttribute('aria-invalid');
+        setStatus('Thanks for subscribing! You will receive launch and mission updates at ' + value + '.', 'success');
+        form.reset();
+      });
+
+      // Clear error styling once the user starts editing again
+      input.addEventListener('input', function () {
+        if (input.getAttribute('aria-invalid') === 'true') {
+          input.removeAttribute('aria-invalid');
+          setStatus('', null);
+        }
+      });
+    })();
+
+    // ---------- Accessible custom listbox in the contact modal ----------
+    (function () {
+      var btn   = document.getElementById('customDropdownButton');
+      var list  = document.getElementById('dropdownOptions');
+      var valEl = document.getElementById('customDropdownValue');
+      if (!btn || !list || !valEl) return;
+
+      var options = Array.prototype.slice.call(list.querySelectorAll('[role="option"]'));
+      var activeIndex = -1;
+      var selectedIndex = -1;
+
+      function openList() {
+        list.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        var startIndex = selectedIndex >= 0 ? selectedIndex : 0;
+        setActive(startIndex);
+        list.focus();
+      }
+      function closeList(focusButton) {
+        list.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        setActive(-1);
+        if (focusButton) btn.focus();
+      }
+      function setActive(index) {
+        options.forEach(function (o, i) {
+          o.classList.toggle('is-active', i === index);
+          if (i === index) {
+            list.setAttribute('aria-activedescendant', o.id || (o.id = 'mission-opt-' + i));
+            o.scrollIntoView({ block: 'nearest' });
+          }
+        });
+        activeIndex = index;
+      }
+      function selectIndex(index) {
+        if (index < 0 || index >= options.length) return;
+        options.forEach(function (o, i) { o.setAttribute('aria-selected', String(i === index)); });
+        selectedIndex = index;
+        valEl.textContent = options[index].textContent;
+      }
+
+      btn.addEventListener('click', function () {
+        if (list.hidden) openList(); else closeList(true);
+      });
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openList();
+        }
+      });
+
+      list.addEventListener('keydown', function (e) {
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            setActive(Math.min(activeIndex + 1, options.length - 1));
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            setActive(Math.max(activeIndex - 1, 0));
+            break;
+          case 'Home':
+            e.preventDefault();
+            setActive(0);
+            break;
+          case 'End':
+            e.preventDefault();
+            setActive(options.length - 1);
+            break;
+          case 'Enter':
+          case ' ':
+            e.preventDefault();
+            if (activeIndex >= 0) { selectIndex(activeIndex); }
+            closeList(true);
+            break;
+          case 'Escape':
+            e.preventDefault();
+            closeList(true);
+            break;
+          case 'Tab':
+            closeList(false);
+            break;
+        }
+      });
+
+      options.forEach(function (opt, i) {
+        opt.id = 'mission-opt-' + i;
+        opt.addEventListener('mouseenter', function () { setActive(i); });
+        opt.addEventListener('click', function () {
+          selectIndex(i);
+          closeList(true);
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (list.hidden) return;
+        if (!list.contains(e.target) && e.target !== btn) closeList(false);
+      });
+    })();
+
+    // ---------- Contact modal form ----------
+    (function () {
+      var form = document.querySelector('#contactModal .contact-form');
+      var status = document.getElementById('contactFormStatus');
+      if (!form || !status) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = form.querySelector('#modal-name');
+        var email   = form.querySelector('#modal-email');
+        var message = form.querySelector('#modal-message');
+        var errors = [];
+
+        [name, email, message].forEach(function (f) { f.removeAttribute('aria-invalid'); });
+
+        if (!name.value.trim()) { errors.push('name'); name.setAttribute('aria-invalid','true'); }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { errors.push('a valid email address'); email.setAttribute('aria-invalid','true'); }
+        if (!message.value.trim()) { errors.push('a message'); message.setAttribute('aria-invalid','true'); }
+
+        if (errors.length) {
+          status.style.color = '#ffb6b6';
+          status.textContent = 'Please provide ' + errors.join(', ') + '.';
+          var firstBad = form.querySelector('[aria-invalid="true"]');
+          if (firstBad) firstBad.focus();
+          return;
+        }
+        status.style.color = '#b6ffb6';
+        status.textContent = 'Thanks, ' + name.value.trim() + '! Mission Control will be in touch soon.';
+        form.reset();
+        document.getElementById('customDropdownValue').textContent = 'Select your mission type';
+      });
+    })();
+  </script>
+</body>
+</html>
